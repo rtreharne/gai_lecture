@@ -1,0 +1,17 @@
+:root {
+  --ink: #f4f8f4;
+  --muted: #9cb0ad;
+  --bg: #071018;
+  --panel: rgba(14, 29, 35, .76);
+  --cyan: #56e6d0;
+  --lime: #c7f36b;
+  --amber: #ffc857;
+  --coral: #ff7b7b;
+  --line: rgba(179, 235, 220, .18);
+  --mono: 'DM Mono', monospace;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); font-family: var(--sans); }
+body { overflow: hidden; }
+button { font: inherit; color: inherit; }
