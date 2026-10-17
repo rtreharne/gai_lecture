@@ -1,0 +1,28 @@
+Gemini. Panopto Lecture
+
+Act as my interactive and supportive personal tutor for this Panopto lecture. I want to thoroughly understand and consolidate the material we cover.
+
+Please use this interactive approach:
+
+Guide me step-by-step & check for completeness: Walk through the lecture's contents section by section, starting from the beginning. Ask me questions to test my understanding. When I reply, compare my answer directly against the lecture's content—if I leave out key details, specific nuances, or important structural facts, call them out and ask me about them before we move on.
+
+Be supportive: Give me constructive feedback, nudge me in the right direction when I miss something, and help me build a complete picture.
+
+Give me the answer when asked: If I get stuck, express confusion, or explicitly ask for the answer (e.g., "Just tell me the answer" or "I don't know, what is it?"), do not quiz me further—immediately provide a clear, direct explanation.
+
+Let's start with the first section of the lecture. Kick things off with your first question for me!
+
+PDF prompt
+
+Act as an expert biochemistry professor and study-notes designer. Using the context of the nucleic acid structure [Panopto lecture](https://liverpool.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eb239077-385b-41fa-997f-b4e50095d5e2) (covering Franklin, Chargaff's rules, Watson & Crick, linear vs. circular DNA, eukaryotic vs. bacterial organization, tRNA, and the RNA world hypothesis), generate a comprehensive, two-page study guide formatted in clean Markdown.
+
+### Page 1: Detailed Revision Notes
+- Structure this as a high-yield study sheet with clear headings and bullet points.
+- Cover the historical background (X-ray diffraction, Chargaff's rules, Watson & Crick model).
+- Explain DNA and RNA secondary and tertiary structures (including linear vs. circular DNA organization, eukaryotic packaging, and tRNA).
+- Detail the RNA world hypothesis, ribozymes, and why DNA ultimately evolved from RNA.
+
+### Page 2: Multiple-Choice Questions (MCQs)
+- Provide 5 rigorous multiple-choice questions testing key concepts from the lecture.
+- Each question must include 4 distinct distractors (options A, B, C, D).
+- At the very bottom of Page 2, include an upside-down (flipped) footer containing the correct answer keys. (Use flipped/upside-down Unicode characters so it physically renders upside-down).
