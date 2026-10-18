@@ -80,6 +80,12 @@ const slides = [
   },
   {
     k: "GITHUB CODESPACES + COPILOT",
-    title: "The Future:<br><span class=\"accent\">Agentic AI</span>"
+    title: "The Future:<br><span class=\"accent\">Agentic AI</span>",
+    snapshotModal: {
+      title: "Snapshot of Rob's VS Code (18 Oct, 8pm)",
+      actionLabel: "Open VS Code snapshot",
+      src: "vscode.png",
+      alt: "Rob's VS Code workspace with the Calvin bioscience portfolio open alongside the Codex chat."
+    }
   }
 ];

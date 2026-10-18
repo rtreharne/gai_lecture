@@ -38,6 +38,14 @@
       <button id="copyModalPrompt" class="copy-prompt prompt-modal__copy" type="button">Copy prompt</button>
     </div>
   </dialog>
+  <dialog id="snapshotModal" class="snapshot-modal" aria-labelledby="snapshotModalTitle">
+    <div class="snapshot-modal__content">
+      <button id="closeSnapshotModal" class="prompt-modal__close" type="button" aria-label="Close snapshot">×</button>
+      <div class="eyebrow">SNAPSHOT</div>
+      <h2 id="snapshotModalTitle"></h2>
+      <img id="snapshotModalImage" alt="" />
+    </div>
+  </dialog>
   <script src="js/content.js"></script>
   <script src="js/deck.js"></script>
 </body>

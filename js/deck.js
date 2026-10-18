@@ -10,6 +10,10 @@
   const promptModalText = document.getElementById('promptModalText');
   const copyModalPrompt = document.getElementById('copyModalPrompt');
   const closePromptModal = document.getElementById('closePromptModal');
+  const snapshotModal = document.getElementById('snapshotModal');
+  const snapshotModalTitle = document.getElementById('snapshotModalTitle');
+  const snapshotModalImage = document.getElementById('snapshotModalImage');
+  const closeSnapshotModal = document.getElementById('closeSnapshotModal');
   let modalTrigger;
   let current = Math.max(0, Math.min(slides.length - 1, (Number(location.hash.slice(1)) || 1) - 1));
   const esc = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
@@ -17,11 +21,12 @@
   const linkList = links => links ? `<div class="resource-links">${links.map(([label, href]) => `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(label)} <span aria-hidden="true">↗</span></a>`).join('')}</div>` : '';
   function slideHTML(s, i) {
     const promptAction = s.promptModal ? `<button class="resource-prompt" type="button" data-prompt-label="${esc(s.promptModal.label || `${s.k} / STUDY PROMPT`)}" data-prompt-title="${esc(s.promptModal.title)}" data-prompt-intro="${esc(s.promptModal.intro || 'Copy this prompt, then paste it into the relevant tool.')}" data-prompt="${esc(s.promptModal.prompt)}">${esc(s.promptModal.actionLabel || 'Open prompt')} <span aria-hidden="true">→</span></button>` : '';
+    const snapshotAction = s.snapshotModal ? `<button class="resource-prompt" type="button" data-snapshot-title="${esc(s.snapshotModal.title)}" data-snapshot-src="${esc(s.snapshotModal.src)}" data-snapshot-alt="${esc(s.snapshotModal.alt)}">${esc(s.snapshotModal.actionLabel)} <span aria-hidden="true">→</span></button>` : '';
     const cards = s.grid ? `<div class="grid ${s.grid.length > 2 ? 'three' : ''}">${s.grid.map(c => `<div class="card"><strong>${c[0]}</strong><p>${c[1]}</p></div>`).join('')}</div>` : '';
     const renderResourceLink = ([label, href, action = 'Open resource']) => `<a href="${esc(href)}" target="_blank" rel="noopener" aria-label="Open ${esc(label)} in a new tab"><span>${esc(label)}</span><em>${esc(action)} <b aria-hidden="true">↗</b></em></a>`;
     const resourceLinks = (s.resources || []).filter(link => !s.resourcesAfterPrompt && !link[3]).map(renderResourceLink).join('');
     const postPromptResourceLinks = (s.resources || []).filter(link => s.resourcesAfterPrompt || link[3]).map(renderResourceLink).join('');
-    const resources = (s.resources || s.promptModal) ? `<section class="resource-card" aria-labelledby="resources-${i}"><h3 id="resources-${i}">Resources</h3>${s.resourceNote ? `<p class="resource-note">${esc(s.resourceNote)}</p>` : ''}${resourceLinks}${promptAction}${postPromptResourceLinks}</section>` : '';
+    const resources = (s.resources || s.promptModal || s.snapshotModal) ? `<section class="resource-card" aria-labelledby="resources-${i}"><h3 id="resources-${i}">Resources</h3>${s.resourceNote ? `<p class="resource-note">${esc(s.resourceNote)}</p>` : ''}${resourceLinks}${promptAction}${snapshotAction}${postPromptResourceLinks}</section>` : '';
     const diagram = s.diagram ? `<div class="diagram">${s.diagram.map((x, j) => `<span class="node">${x}</span>${j < s.diagram.length - 1 ? '<span class="arrow">→</span>' : ''}`).join('')}</div>` : '';
     const prompt = s.prompt ? `<div class="prompt-wrap"><blockquote class="demo-prompt">${esc(s.prompt)}</blockquote>${copyButton(s.prompt)}</div>` : '';
     const checklist = s.checklist ? `<ol class="demo-checklist">${s.checklist.map(item => `<li>${esc(item)}</li>`).join('')}</ol>` : '';
@@ -47,7 +52,15 @@
     promptModal.showModal();
     closePromptModal.focus();
   }
-  function render() { root.innerHTML = slides.map(slideHTML).join(''); root.querySelectorAll('.copy-prompt').forEach(button => button.addEventListener('click', () => copyText(button))); root.querySelectorAll('.resource-prompt').forEach(button => button.addEventListener('click', () => openPromptModal(button))); update(); buildOverview(); }
+  function openSnapshotModal(button) {
+    modalTrigger = button;
+    snapshotModalTitle.textContent = button.dataset.snapshotTitle;
+    snapshotModalImage.src = button.dataset.snapshotSrc;
+    snapshotModalImage.alt = button.dataset.snapshotAlt;
+    snapshotModal.showModal();
+    closeSnapshotModal.focus();
+  }
+  function render() { root.innerHTML = slides.map(slideHTML).join(''); root.querySelectorAll('.copy-prompt').forEach(button => button.addEventListener('click', () => copyText(button))); root.querySelectorAll('[data-prompt-title]').forEach(button => button.addEventListener('click', () => openPromptModal(button))); root.querySelectorAll('[data-snapshot-title]').forEach(button => button.addEventListener('click', () => openSnapshotModal(button))); update(); buildOverview(); }
   function update() { document.querySelectorAll('.slide').forEach((el, i) => el.classList.toggle('active', i === current)); counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`; history.replaceState(null, '', `#${current + 1}`); }
   function go(n) { current = Math.max(0, Math.min(slides.length - 1, n)); update(); }
   function buildOverview() { overviewGrid.innerHTML = slides.map((s, i) => `<div class="thumb" data-goto="${i}"><b>${String(i + 1).padStart(2, '0')} / ${s.k}</b><span>${s.title.replace(/<[^>]+>/g, '')}</span></div>`).join(''); overviewGrid.querySelectorAll('.thumb').forEach(x => x.addEventListener('click', () => { go(Number(x.dataset.goto)); overviewPanel.hidden = true; })); }
@@ -56,6 +69,9 @@
   closePromptModal.addEventListener('click', () => promptModal.close());
   promptModal.addEventListener('click', event => { if (event.target === promptModal) promptModal.close(); });
   promptModal.addEventListener('close', () => modalTrigger?.focus());
+  closeSnapshotModal.addEventListener('click', () => snapshotModal.close());
+  snapshotModal.addEventListener('click', event => { if (event.target === snapshotModal) snapshotModal.close(); });
+  snapshotModal.addEventListener('close', () => modalTrigger?.focus());
   document.addEventListener('keydown', e => { if (e.target.closest('button, summary, a, input, textarea')) return; if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(current + 1); } else if (e.key === 'ArrowLeft') go(current - 1); else if (e.key === 'Home') go(0); else if (e.key === 'End') go(slides.length - 1); else if (e.key.toLowerCase() === 'f') document.documentElement.requestFullscreen?.(); else if (e.key.toLowerCase() === 'p') overviewPanel.hidden = !overviewPanel.hidden; else if (e.key === 'Escape') { overviewPanel.hidden = true; document.exitFullscreen?.(); } else if (e.key === '?') document.getElementById('help').hidden = !document.getElementById('help').hidden; });
   render();
 })();
