@@ -52,6 +52,8 @@ const slides = [
   {
     k: "MICROSOFT COPILOT",
     title: "Finding Job<br><span class=\"accent\">Opportunities</span>",
+    resourceNote: "Use the fictional Susan Calvin CV as the attachment for this demonstration.",
+    resources: [["Susan Calvin CV", "Susan_Calvin_CV_Final.pdf", "Open fictional CV"]],
     promptModal: {
       label: "MICROSOFT COPILOT / CAREERS PROMPT",
       intro: "Attach your CV, then paste this prompt into Microsoft Copilot.",

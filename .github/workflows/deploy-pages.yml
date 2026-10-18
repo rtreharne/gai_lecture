@@ -25,7 +25,7 @@ jobs:
       - name: Assemble public site
         run: |
           mkdir _site
-          cp index.html prompts.html "January 2027 Revision Planner.html" "January_2027_Revision_Planner CoPilot.html" _site/
+          cp index.html prompts.html "January 2027 Revision Planner.html" "January_2027_Revision_Planner CoPilot.html" Susan_Calvin_CV_Final.pdf _site/
           cp -R css js assets _site/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
