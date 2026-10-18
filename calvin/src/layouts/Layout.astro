@@ -1,0 +1,20 @@
+---
+import '../styles/global.css';
+
+const { title = 'Susan Calvin | Biosciences student', description = 'Susan Calvin is a BSc Biosciences student building laboratory, data analysis and scientific communication skills.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#071d2a" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <slot />
+  </body>
+</html>
