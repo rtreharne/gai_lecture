@@ -1,0 +1,7 @@
+Raw observations: 344
+Missing cells: 19
+Missing values by column:
+          species            island    bill_length_mm     bill_depth_mm 
+                0                 0                 2                 2 
+flipper_length_mm       body_mass_g               sex              year 
+                2                 2                11                 0 

@@ -1,0 +1,12 @@
+Palmer Penguins: body mass by species
+
+Raw rows: 344; missing cells: 19.
+Rows retained after removing missing species or body mass: 342 (2 removed).
+One-way ANOVA: F(2, 339) = 343.63, p = <0.001.
+Mean body mass differed among at least some of the three species in this one-way ANOVA.
+The overall ANOVA was significant; Tukey HSD pairwise comparisons are in tukey_results.csv.
+
+These are observational species comparisons, not causal effects. Species comparisons may be confounded by sex and island because their distributions can differ across species.
+A sensible next analysis is a multiple linear model of body mass by species, sex, and island, using complete observations for those variables, then checking model assumptions and considering biologically justified interactions.
+
+Check the residuals-versus-fitted and Q-Q plots in anova_diagnostics.png for departures from model assumptions.
