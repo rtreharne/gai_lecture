@@ -58,10 +58,14 @@ h1, h2, h3, p { margin-top: 0; }
 .orbit-one { inset: 5%; }
 .orbit-two { inset: 21%; border-color: rgba(213,250,98,.46); }
 .orbit-three { inset: 38%; border-color: rgba(125,168,255,.7); }
-.signal { position: absolute; display: block; width: .6rem; height: .6rem; border-radius: 50%; background: var(--acid); box-shadow: 0 0 0 .55rem rgba(213,250,98,.09), 0 0 2rem var(--acid); }
-.signal-one { top: 15%; left: 20%; }
-.signal-two { right: 10%; bottom: 25%; background: var(--teal); box-shadow: 0 0 0 .55rem rgba(73,215,193,.09), 0 0 2rem var(--teal); }
-.signal-three { bottom: 17%; left: 39%; width: .4rem; height: .4rem; background: var(--blue); box-shadow: 0 0 1.3rem var(--blue); }
+.signal-track { position: absolute; display: block; animation: orbit linear infinite; }
+.track-one { inset: 5%; animation-duration: 15s; }
+.track-two { inset: 21%; animation-duration: 9s; animation-direction: reverse; }
+.track-three { inset: 38%; animation-duration: 21s; }
+.signal { position: absolute; top: -.3rem; left: 50%; display: block; width: .6rem; height: .6rem; border-radius: 50%; background: var(--acid); box-shadow: 0 0 0 .55rem rgba(213,250,98,.09), 0 0 2rem var(--acid); transform: translateX(-50%); }
+.signal-two { background: var(--teal); box-shadow: 0 0 0 .55rem rgba(73,215,193,.09), 0 0 2rem var(--teal); }
+.signal-three { width: .4rem; height: .4rem; background: var(--blue); box-shadow: 0 0 1.3rem var(--blue); }
+@keyframes orbit { to { transform: rotate(1turn); } }
 
 .section { padding-block: clamp(5rem, 11vw, 10rem); }
 .section-kicker { width: min(1180px, calc(100% - 2.5rem)); margin: 0 auto clamp(1.5rem, 3vw, 2.8rem); }
@@ -138,4 +142,4 @@ h1, h2, h3, p { margin-top: 0; }
   .hero, .section-content, .section-kicker { width: min(100% - 2rem, 1180px); }.hero { padding-top: 3.5rem; }.hero h1 { font-size: clamp(3.25rem, 15vw, 4.5rem); }
   .hero-actions { display: grid; }.button { width: 100%; }.hero-facts { gap: 1.2rem; margin-top: 3rem; }.skill-grid { grid-template-columns: 1fr; }.skill-card { min-height: 240px; }.section { padding-block: 4.5rem; }
 }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation: none !important; } }
