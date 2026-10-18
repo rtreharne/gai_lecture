@@ -23,7 +23,9 @@ Arrow keys or Space navigate. `Home` and `End` jump. `F` enters fullscreen. `P` 
 
 ## GitHub Pages
 
-This is buildless static HTML/CSS/JS. Publish the repository root from the `main` branch using GitHub Pages. No credentials or runtime API keys are required.
+This is buildless static HTML/CSS/JS. The included GitHub Actions workflow publishes the public site assets whenever `main` changes; it explicitly excludes local configuration such as `.env`.
+
+Before the first deployment, a repository owner must enable GitHub Pages once: **Settings → Pages → Build and deployment → Source → GitHub Actions**. The site will then publish at `https://rtreharne.github.io/gai_lecture/` on the next push to `main`. No credentials or runtime API keys are required by the site itself.
 
 The presentation is published at `index.html`; the student take-away is `prompts.html`. Both are relative links, so they work automatically once the repository root is deployed.
 
