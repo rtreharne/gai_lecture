@@ -62,9 +62,6 @@ h1, h2, h3, p { margin-top: 0; }
 .signal-one { top: 15%; left: 20%; }
 .signal-two { right: 10%; bottom: 25%; background: var(--teal); box-shadow: 0 0 0 .55rem rgba(73,215,193,.09), 0 0 2rem var(--teal); }
 .signal-three { bottom: 17%; left: 39%; width: .4rem; height: .4rem; background: var(--blue); box-shadow: 0 0 1.3rem var(--blue); }
-.axis-label { position: absolute; color: #829b9b; font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.axis-x { right: 7%; bottom: 5%; }
-.axis-y { top: 10%; left: 0; writing-mode: vertical-rl; }
 
 .section { padding-block: clamp(5rem, 11vw, 10rem); }
 .section-kicker { width: min(1180px, calc(100% - 2.5rem)); margin: 0 auto clamp(1.5rem, 3vw, 2.8rem); }
