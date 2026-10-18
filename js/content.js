@@ -63,14 +63,17 @@ const slides = [
     }
   },
   {
-    k: "MICROSOFT COPILOT",
+    k: "CLAUDE",
     title: "Creating an Amazing CV<br><span class=\"coral\">Tailored to a Job Application</span>",
-    resources: [["AstraZeneca Pharmaceutical Development Summer Placements", "https://careers.astrazeneca.com/pharmaceutical-development-summer-placements", "Open AstraZeneca placements"]],
+    resources: [
+      ["AstraZeneca Pharmaceutical Development Summer Placements", "https://careers.astrazeneca.com/pharmaceutical-development-summer-placements", "Open AstraZeneca placements"],
+      ["Susan Calvin CV — AstraZeneca", "Susan_Calvin_CV_AstraZeneca_QC-1.pdf", "Open tailored CV"]
+    ],
     promptModal: {
-      label: "MICROSOFT COPILOT / CV DESIGN PROMPT",
-      intro: "Attach your CV, add the job URL, then paste this prompt into Microsoft Copilot.",
-      title: "Microsoft Copilot CV-redesign prompt",
-      actionLabel: "Open Microsoft Copilot CV-redesign prompt",
+      label: "CLAUDE / CV DESIGN PROMPT",
+      intro: "Attach your CV, add the job URL, then paste this prompt into Claude.",
+      title: "Claude CV-redesign prompt",
+      actionLabel: "Open Claude CV-redesign prompt",
       prompt: "Using my attached CV and this job-application URL:\n\n[PASTE JOB URL HERE]\n\nredesign and tailor my CV for this specific role.\n\nFirst, extract the job title, employer, essential criteria, desirable criteria, technical skills and key responsibilities from the application page. Then revise my CV so that it is clear, concise, ATS-friendly and targeted to those requirements.\n\nRequirements:\n\n- Do not invent qualifications, grades, employment, projects, software experience or achievements. If information is missing, use a clear placeholder or suggest a question for me to answer.\n- Keep the CV to a maximum of two pages.\n- Use a professional UK CV format with clear sections: Profile, Education, Relevant Experience, Technical Skills, Projects or Coursework, Additional Experience and Interests/Activities where useful.\n- Reorder and strengthen existing content to make the most relevant evidence prominent.\n- Use specific action verbs and achievement-focused bullet points.\n- Include relevant keywords from the job description naturally, without keyword stuffing.\n\nEnsure the revised CV highlights:\n\n1. Biosciences knowledge and practical/laboratory skills relevant to the role.\n2. Generative AI skills and experience gained during my degree, such as using AI responsibly for study planning, revision support, understanding complex topics, drafting and improving work, and evaluating AI outputs critically.\n3. Responsible AI practice: checking accuracy, protecting confidential information, following assessment rules and using AI as support rather than a replacement for my own work.\n4. Data skills, including R programming for statistical analysis, data cleaning, visualisation, interpreting results and communicating findings clearly.\n5. Transferable skills: problem-solving, teamwork, communication, organisation, attention to detail and independent learning.\n\nCreate the final CV as a polished, visually striking two-page PDF suitable for a competitive bioscience, research or pharmaceutical application.\n\nDesign requirements:\n\n- Modern, professional and clean—not overly decorative.\n- Strong visual hierarchy, generous white space and excellent readability.\n- Subtle science-inspired colour accents.\n- Consistent typography and spacing.\n- ATS-friendly structure with standard section headings.\n- No graphics, tables or design elements that interfere with applicant-tracking systems.\n\nOutput:\n\n1. A short summary of how the CV was tailored.\n2. The complete revised CV in editable text.\n3. A polished, downloadable PDF version of the CV.\n4. A list of any unsupported claims or missing information I should confirm before using it.\n5. Five suggested changes I could make to strengthen my application further.\n\nIf you cannot create a downloadable PDF directly, produce a print-ready HTML or Word-style document that I can save as PDF without further rewriting."
     }
   },
