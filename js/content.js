@@ -38,8 +38,7 @@ const slides = [
     resourcesAfterPrompt: true,
     resources: [
       ["Claude.ai", "https://claude.ai/", "Open Claude.ai"],
-      ["January 2027 Revision Planner", "January 2027 Revision Planner.html", "Open January 2027 Revision Planner"],
-      ["Microsoft Copilot Revision Planner — Epic Fail", "January_2027_Revision_Planner CoPilot.html", "Open Microsoft Copilot Revision Planner"]
+      ["January 2027 Revision Planner", "January 2027 Revision Planner.html", "Open January 2027 Revision Planner"]
     ],
     promptModal: {
       label: "CLAUDE / PLANNER ARTIFACT",
