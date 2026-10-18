@@ -53,10 +53,7 @@ const slides = [
     k: "MICROSOFT COPILOT",
     title: "Finding Job<br><span class=\"accent\">Opportunities</span>",
     resourceNote: "Use the fictional Susan Calvin CV as the attachment for this demonstration.",
-    resources: [
-      ["Susan Calvin CV", "Susan_Calvin_CV_Final.pdf", "Open fictional CV"],
-      ["AstraZeneca Pharmaceutical Development Summer Placements", "https://careers.astrazeneca.com/pharmaceutical-development-summer-placements", "Open AstraZeneca placements"]
-    ],
+    resources: [["Susan Calvin CV", "Susan_Calvin_CV_Final.pdf", "Open fictional CV"]],
     promptModal: {
       label: "MICROSOFT COPILOT / CAREERS PROMPT",
       intro: "Attach your CV, then paste this prompt into Microsoft Copilot.",
@@ -67,7 +64,8 @@ const slides = [
   },
   {
     k: "MICROSOFT COPILOT",
-    title: "Creating an Amazing CV<br><span class=\"coral\">Tailored to a Job Application</span>"
+    title: "Creating an Amazing CV<br><span class=\"coral\">Tailored to a Job Application</span>",
+    resources: [["AstraZeneca Pharmaceutical Development Summer Placements", "https://careers.astrazeneca.com/pharmaceutical-development-summer-placements", "Open AstraZeneca placements"]]
   },
   {
     k: "GITHUB CODESPACES + COPILOT",
