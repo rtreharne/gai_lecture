@@ -63,6 +63,7 @@ const slides = [
   },
   {
     k: "CLAUDE",
+    className: "cv-slide",
     title: "Creating an Amazing CV<br><span class=\"coral\">Tailored to a Job Application</span>",
     disclaimer: "Proofread every line before using an AI-assisted CV. Check that all claims are accurate, personalise the wording, and correct any errors before submitting an application.",
     resources: [

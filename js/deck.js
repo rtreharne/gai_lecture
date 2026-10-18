@@ -29,7 +29,7 @@
     const disclaimer = s.disclaimer ? `<aside class="disclaimer"><strong>IMPORTANT</strong><p>${esc(s.disclaimer)}</p></aside>` : '';
     const studyOnly = s.studyOnly ? `<div class="study-only">${assessmentNotice}</div>` : '';
     const resource = s.resource ? `<a class="library-link" href="${esc(s.resource.href)}">${esc(s.resource.label)} <span aria-hidden="true">→</span></a>` : '';
-    return `<section class="slide ${i === current ? 'active' : ''}" data-index="${i}" data-number="${String(i + 1).padStart(2, '0')}"><div class="eyebrow">${s.k}${s.time ? ` <span class="time">${s.time}</span>` : ''}</div>${studyOnly}<h2>${s.title}</h2>${s.lead ? `<p class="lead">${s.lead}</p>` : ''}${disclaimer}${resources}${cards}${diagram}${prompt}${checklist}${check}${linkList(s.links)}${resource}${s.source ? `<div class="source">${s.source}</div>` : ''}</section>`;
+    return `<section class="slide ${s.className || ''} ${i === current ? 'active' : ''}" data-index="${i}" data-number="${String(i + 1).padStart(2, '0')}"><div class="eyebrow">${s.k}${s.time ? ` <span class="time">${s.time}</span>` : ''}</div>${studyOnly}<h2>${s.title}</h2>${s.lead ? `<p class="lead">${s.lead}</p>` : ''}${disclaimer}${resources}${cards}${diagram}${prompt}${checklist}${check}${linkList(s.links)}${resource}${s.source ? `<div class="source">${s.source}</div>` : ''}</section>`;
   }
   function copyText(button) {
     const value = button.dataset.copy;
