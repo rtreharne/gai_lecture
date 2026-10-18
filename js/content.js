@@ -82,7 +82,8 @@ const slides = [
     k: "GITHUB CODESPACES + COPILOT",
     title: "The Future:<br><span class=\"accent\">Agentic AI</span>",
     resources: [
-      ["Make a personal website with AI", "https://hi-py.uk/resources/personal-website-with-ai/", "Open resource"]
+      ["Make a personal website with AI", "https://hi-py.uk/resources/personal-website-with-ai/", "Open resource"],
+      ["Susan Calvin personal website", "https://rtreharne.github.io/gai_lecture/calvin/", "Open portfolio", true]
     ],
     snapshotModal: {
       title: "Snapshot of Rob's VS Code (18 Oct, 8pm)",
