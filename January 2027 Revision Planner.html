@@ -1,0 +1,851 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>January 2027 Revision Planner</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout concept: a plate map of study days (rows A-E = weeks, columns 1-7 = Mon-Sun) over a week-by-week overview and per-day timetable. Controls stay neutral so the six fixed category hues keep their meaning. */
+:root{
+  --bg:#EEF1F6; --surface:#FFFFFF; --surface2:#F5F7FA; --ink:#132033; --muted:#54647A; --line:#D3DAE5; --focus:#1D4FD7;
+  --blue:#2563D6; --blue-t:#E2ECFC; --blue-i:#123A8C;
+  --green:#1F8A4C; --green-t:#DCF2E5; --green-i:#0D5A2F;
+  --red:#D12F3B; --red-t:#FBE3E5; --red-i:#8A1620;
+  --grey:#6A7585; --grey-t:#E4E8EE; --grey-i:#333D4B;
+  --yellow:#D99A00; --yellow-t:#FFF1BD; --yellow-i:#6B4E00;
+  --purple:#7A4FD0; --purple-t:#EBE3FA; --purple-i:#47288F;
+  --font-ui:"Avenir Next","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D121A; --surface:#151C27; --surface2:#1B2431; --ink:#E5EBF3; --muted:#9AA9BC; --line:#2A3546; --focus:#7FA6FF;
+    --blue:#6C9BFF; --blue-t:#172A52; --blue-i:#B3CCFF;
+    --green:#48C47D; --green-t:#133926; --green-i:#A2E6BF;
+    --red:#F26B75; --red-t:#4A1D23; --red-i:#FFB6BB;
+    --grey:#939EAD; --grey-t:#252D38; --grey-i:#C6CEDA;
+    --yellow:#F0BE3A; --yellow-t:#43360D; --yellow-i:#F6DF93;
+    --purple:#AB88F5; --purple-t:#2D2150; --purple-i:#D0BDFB;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D121A; --surface:#151C27; --surface2:#1B2431; --ink:#E5EBF3; --muted:#9AA9BC; --line:#2A3546; --focus:#7FA6FF;
+  --blue:#6C9BFF; --blue-t:#172A52; --blue-i:#B3CCFF;
+  --green:#48C47D; --green-t:#133926; --green-i:#A2E6BF;
+  --red:#F26B75; --red-t:#4A1D23; --red-i:#FFB6BB;
+  --grey:#939EAD; --grey-t:#252D38; --grey-i:#C6CEDA;
+  --yellow:#F0BE3A; --yellow-t:#43360D; --yellow-i:#F6DF93;
+  --purple:#AB88F5; --purple-t:#2D2150; --purple-i:#D0BDFB;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  background:var(--bg);color:var(--ink);font:15px/1.5 var(--font-ui);
+  padding-block:22px 64px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:18px;min-width:0}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(26px,5vw,38px);line-height:1.08;font-weight:760;letter-spacing:-.025em;text-wrap:balance}
+h2{font-size:19px;font-weight:720;letter-spacing:-.01em;text-wrap:balance}
+h3{font-size:14px;font-weight:700}
+.eyebrow{font:600 12px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.top{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-end;justify-content:space-between}
+.top>div{min-width:0}
+.range{color:var(--muted);margin-top:6px}
+.count{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center}
+.count b{font:700 28px var(--font-mono);color:var(--red);line-height:1}
+.count span{font-size:13px;color:var(--muted);line-height:1.3}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{appearance:none;border:1px solid var(--ink);background:var(--ink);color:var(--bg);font:600 14px var(--font-ui);padding:10px 15px;min-height:44px;border-radius:9px;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn:hover{filter:brightness(1.12)}
+.btn:focus-visible,.tab:focus-visible,.well:focus-visible,.lnk:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.lnk{appearance:none;background:none;border:0;padding:6px 2px;color:var(--muted);font:600 13px var(--font-ui);text-decoration:underline;cursor:pointer}
+#status{min-height:1.4em;font-size:13px;color:var(--muted);flex-basis:100%}
+.key{display:flex;flex-wrap:wrap;gap:8px 14px}
+.k{display:inline-flex;align-items:center;gap:7px;font-size:13px}
+.k i{width:14px;height:14px;border-radius:4px;display:inline-block;background:var(--c)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:0}
+.stat b{display:block;font:700 22px var(--font-mono);letter-spacing:-.02em}
+.stat span{font-size:12.5px;color:var(--muted)}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{appearance:none;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);font:600 14.5px var(--font-ui);padding:10px 14px;cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.panel{display:grid;gap:16px;min-width:0}
+.c-blue{--c:var(--blue);--t:var(--blue-t);--i:var(--blue-i)}
+.c-green{--c:var(--green);--t:var(--green-t);--i:var(--green-i)}
+.c-red{--c:var(--red);--t:var(--red-t);--i:var(--red-i)}
+.c-grey{--c:var(--grey);--t:var(--grey-t);--i:var(--grey-i)}
+.c-yellow{--c:var(--yellow);--t:var(--yellow-t);--i:var(--yellow-i)}
+.c-purple{--c:var(--purple);--t:var(--purple-t);--i:var(--purple-i)}
+/* overview */
+.ovwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.ov{min-width:880px;display:grid;grid-template-columns:150px repeat(7,minmax(108px,1fr))}
+.ov>*{padding:8px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.ov>:nth-child(8n){border-right:0}
+.ovh{font:600 11.5px var(--font-mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--surface2)}
+.wk{background:var(--surface2);display:flex;flex-direction:column;gap:3px;font-size:12.5px}
+.wk b{font:700 12px var(--font-mono);letter-spacing:.07em;text-transform:uppercase}
+.wk .hrs{font:700 15px var(--font-mono)}
+.wk small{color:var(--muted);line-height:1.3;font-size:12px}
+.cell{display:flex;flex-direction:column;gap:3px;background:var(--surface)}
+.cell.out{background:repeating-linear-gradient(135deg,var(--surface2),var(--surface2) 6px,var(--surface) 6px,var(--surface) 12px)}
+.dn{font:700 12px var(--font-mono);color:var(--muted)}
+.chip{font-size:12px;line-height:1.25;padding:3px 6px;border-radius:5px;background:var(--t);color:var(--i);overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.card h3{margin-bottom:10px}
+.dl{display:grid;gap:7px;list-style:none;margin:0;padding:0}
+.dl li{background:var(--t);color:var(--i);border-radius:7px;padding:7px 10px;font-size:13.5px;line-height:1.35}
+.dl b{font-family:var(--font-mono);font-size:12.5px;display:block}
+.bars{display:grid;gap:9px}
+.bar{display:grid;grid-template-columns:78px 1fr 62px;gap:8px;align-items:center;font-size:12.5px}
+.bar .tr{display:flex;height:16px;border-radius:4px;overflow:hidden;background:var(--surface2)}
+.bar .tr i{display:block;height:100%}
+.bar .v{font:700 12.5px var(--font-mono);text-align:right}
+.plain{margin:0;padding-left:18px;display:grid;gap:6px;font-size:13.5px}
+/* daily */
+.plate{display:grid;grid-template-columns:22px repeat(7,minmax(0,40px));gap:6px;align-items:center;justify-content:start}
+.plate .pl{font:700 11px var(--font-mono);color:var(--muted);text-align:center}
+.well{appearance:none;width:40px;height:40px;border-radius:50%;border:2px solid var(--c);background:var(--t);color:var(--i);font:700 12px var(--font-mono);cursor:pointer;padding:0;display:grid;place-items:center}
+.well.work{box-shadow:0 0 0 3px var(--surface),0 0 0 5px var(--grey)}
+.well.void{border:2px dashed var(--line);background:transparent;cursor:default;color:var(--line)}
+.platebox{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.platebox p{font-size:13px;color:var(--muted);max-width:44ch}
+.weekhead{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-top:6px}
+.weekhead span{color:var(--muted);font-size:13px}
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0;scroll-margin-top:12px}
+.day header{display:flex;gap:10px;align-items:center;margin-bottom:10px;min-width:0}
+.date{display:flex;align-items:baseline;gap:5px;white-space:nowrap}
+.date .num{font:760 26px var(--font-mono);letter-spacing:-.03em}
+.date .wd{font-weight:700}
+.date .mo{color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:4px 8px;margin-left:auto;justify-content:flex-end;min-width:0;font-size:12px}
+.pill{border-radius:99px;padding:2px 9px;background:var(--t,var(--surface2));color:var(--i,var(--muted));font-weight:600;white-space:nowrap}
+.tagline{font-size:12.5px;color:var(--muted);margin:-4px 0 8px}
+.rows{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.row{display:grid;grid-template-columns:7.4em 4.6em minmax(0,1fr);gap:2px 8px;background:var(--t);color:var(--i);border-radius:7px;padding:6px 8px;font-size:13.5px;line-height:1.35}
+.row .time{font:600 12px var(--font-mono);padding-top:1px}
+.row .cat{font:700 10.5px var(--font-mono);letter-spacing:.05em;text-transform:uppercase;padding-top:2px;color:var(--c);filter:brightness(.8)}
+.row .what{min-width:0;overflow-wrap:anywhere;font-weight:600}
+.row small{display:block;font-weight:400;opacity:.88;font-size:12px;margin-top:1px}
+.row.brk{padding:3px 8px;font-size:12px;opacity:.9;grid-template-columns:7.4em minmax(0,1fr)}
+.row.brk .what{font-weight:400}
+.row.brk .time{font-size:11px}
+.row.void{background:transparent;border:1px dashed var(--line)}
+/* checks */
+.chk{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.chk li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.ok,.bad{font:700 11px var(--font-mono);letter-spacing:.06em;text-transform:uppercase;border-radius:5px;padding:3px 7px;background:var(--green-t);color:var(--green-i)}
+.bad{background:var(--red-t);color:var(--red-i)}
+.chk small{display:block;color:var(--muted);font-size:12.5px}
+#icsPanel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:10px}
+#icsPanel textarea{width:100%;min-height:150px;font:12px/1.4 var(--font-mono);background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px;resize:vertical}
+#icsPanel p{font-size:13.5px}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+@media (max-width:560px){
+  .row{grid-template-columns:auto minmax(0,1fr)}
+  .row .what{grid-column:1 / -1}
+  .row.brk{grid-template-columns:auto minmax(0,1fr)}
+  .row.brk .what{grid-column:auto}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.well{transition:filter .15s,transform .15s}.well:hover{transform:scale(1.08)}}
+</style>
+
+<div class="wrap" id="app">
+  <header class="top">
+    <div>
+      <p class="eyebrow">BIOS101 &middot; BIOS103 &middot; Europe/London</p>
+      <h1>January 2027 Revision Planner</h1>
+      <p class="range">Friday 18 December 2026 to Monday 11 January 2027, plus the Tuesday 12 January microscopy competency.</p>
+    </div>
+    <div class="count" id="countdown" aria-live="polite"></div>
+  </header>
+
+  <section class="actions" aria-label="Downloads">
+    <button class="btn" id="btnDetail" type="button">Save detailed timetable as PDF</button>
+    <button class="btn" id="btnOverview" type="button">Save one-page overview as PDF</button>
+    <button class="btn" id="btnIcs" type="button">Download Google Calendar (.ics)</button>
+    <button class="lnk" id="btnShowIcs" type="button">Show calendar text instead</button>
+    <p id="status" role="status"></p>
+  </section>
+
+  <section id="icsPanel" hidden aria-label="Calendar file text">
+    <h3>Calendar file text</h3>
+    <p>If your browser blocks the .ics download, copy this text into a plain text file, save it as <b>january-2027-revision-planner.ics</b>, then in Google Calendar choose Settings, Import &amp; export, Import.</p>
+    <textarea id="icsText" readonly aria-label="iCalendar text"></textarea>
+    <div class="btns">
+      <button class="btn alt" id="icsCopy" type="button">Copy calendar text</button>
+      <button class="btn alt" id="icsTxt" type="button">Save as .txt (rename to .ics)</button>
+      <button class="btn alt" id="icsZip" type="button">Save as .zip containing the .ics</button>
+      <button class="btn alt" id="icsClose" type="button">Close</button>
+    </div>
+  </section>
+
+  <section class="key" aria-label="Colour key" id="legend"></section>
+  <section class="stats" id="stats"></section>
+
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button class="tab" role="tab" id="tab-overview" aria-selected="true" aria-controls="p-overview" type="button">Weekly overview</button>
+    <button class="tab" role="tab" id="tab-daily" aria-selected="false" aria-controls="p-daily" type="button">Daily timetable</button>
+    <button class="tab" role="tab" id="tab-rules" aria-selected="false" aria-controls="p-rules" type="button">Rules and assumptions</button>
+  </nav>
+
+  <main>
+    <section class="panel" id="p-overview" role="tabpanel" aria-labelledby="tab-overview"></section>
+    <section class="panel" id="p-daily" role="tabpanel" aria-labelledby="tab-daily" hidden></section>
+    <section class="panel" id="p-rules" role="tabpanel" aria-labelledby="tab-rules" hidden></section>
+  </main>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ================= helpers ================= */
+var pad=function(n){return String(n).padStart(2,'0')};
+var WD=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+var WDL=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function dparts(s){var a=s.split('-').map(Number);var t=Date.UTC(a[0],a[1]-1,a[2]);return{y:a[0],m:a[1],d:a[2],t:t,dow:new Date(t).getUTCDay()}}
+function addDays(s,n){var p=dparts(s);var t=new Date(p.t+n*864e5);return t.getUTCFullYear()+'-'+pad(t.getUTCMonth()+1)+'-'+pad(t.getUTCDate())}
+function mondayOf(s){return addDays(s,-((dparts(s).dow+6)%7))}
+function lab(s,full){var p=dparts(s);return WD[p.dow]+' '+p.d+' '+MON[p.m-1]+(full?' '+p.y:'')}
+function tm(t){var a=t.split(':');return (+a[0])*60+(+a[1])}
+function hm(n){return pad(Math.floor(n/60))+':'+pad(n%60)}
+function dur(m){var h=Math.floor(m/60),r=m%60;return h?(h+'h'+(r?' '+pad(r)+'m':'')):(r+'m')}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+
+/* ================= plan data ================= */
+var START='2026-12-18',END='2027-01-11';
+var TPL={
+  F4:{slots:[['09:30','10:20'],['10:35','11:25'],['13:00','13:50'],['14:05','14:55']],after:'Study finished. The rest of the day is yours.'},
+  F3:{slots:[['10:00','10:50'],['11:05','11:55'],['13:30','14:20']],after:'Study finished. The rest of the day is yours.'},
+  W3:{slots:[['09:00','09:50'],['10:05','10:55'],['11:10','12:00']],after:'Lunch, rest and travel to work.'},
+  W2:{slots:[['09:30','10:20'],['10:35','11:25']],after:'Early finish: lunch, rest and travel to work.'},
+  S10:{slots:[['09:30','10:20'],['10:35','11:25'],['11:40','12:30']],after:'Afternoon and evening off. Early night before Monday.'}
+};
+function B(c,t,s,n,subj){return{c:c,t:t,s:s,n:n,subj:subj}}
+function P(w,n){return B('b101','Wk '+w+' session '+n+' (priority)','B101 Wk '+w+' S'+n,'Active recall first: write what you remember, then check slides and fix gaps.')}
+function E(t,s){return B('b101',t+' (revisit)',s,'Lighter pass: key terms, diagrams, one or two exam-style questions per session.')}
+function R(t,s,n){return B('b101',t,s,n)}
+function C(t,s,n,subj){return B('catch',t,s,n,subj)}
+function K(t,s,n){return B('b103',t,s,n)}
+function QS(w){return K('QS Data Task - Week '+w,'QS Wk '+w,'About a 1 hour task, planned as one block. Any overrun goes to the next catch-up.')}
+function BB(w){return K('BioBoost | Quantitative Skills - Week '+w,'BioBoost Wk '+w,'About a 1 hour activity, planned as one block. Any overrun goes to the next catch-up.')}
+
+var DAYS=[
+{d:'2026-12-18',tpl:'F4',tag:'Launch day. Deadlines first.',blocks:[
+  C('Set-up and catch-up','Set-up / catch-up','Confirm QS Data Tasks and BioBoost for Weeks 1-4 are done (assumed). Tidy notes and list gaps.','b103'),
+  K('Report: read brief and rubric, outline Methods and Results','Report: outline','List sections, figures and analyses needed. Gather raw data and methods notes.'),
+  QS(6),BB(6)]},
+{d:'2026-12-19',tag:'Work day. No revision.',rest:{t:'No-revision day (work shift)',s:'No revision',n:'Work 09:00-17:00. Evening off with no revision.'}},
+{d:'2026-12-20',tag:'Full rest day',rest:{t:'Rest day - no revision',s:'Rest day',n:'Full day off. Sleep, food and fresh air.'}},
+{d:'2026-12-21',tpl:'F4',tag:'BIOS101 priority sessions start',blocks:[P(8,1),P(8,2),
+  K('Report: draft Methods (part 1)','Report: Methods 1','Write the experimental design, materials and procedures.'),QS(8)]},
+{d:'2026-12-22',tpl:'W3',tag:'Study before work',blocks:[P(8,3),BB(8),
+  K('Report: draft Methods (part 2)','Report: Methods 2','Add statistical methods and data handling. Keep it reproducible.')]},
+{d:'2026-12-23',tpl:'F4',blocks:[P(9,1),P(9,2),
+  K('Report: data analysis and statistics','Report: analysis','Run the analyses, check assumptions, save outputs and tables.'),QS(9)]},
+{d:'2026-12-24',tpl:'W2',tag:'Christmas Eve: study ends by 11:25',wn:'Christmas Eve. Confirm your shift time with your manager.',blocks:[P(9,3),BB(9)]},
+{d:'2026-12-25',tag:'Holiday',rest:{t:'Christmas Day - no study',s:'Christmas Day',n:'Holiday. No study.'}},
+{d:'2026-12-26',tag:'Holiday and work shift',wn:'Boxing Day shift assumed to run. Confirm with your manager.',rest:{t:'Boxing Day - no study (work shift)',s:'Boxing Day',n:'No study. Work 09:00-17:00 (assumed to run).'}},
+{d:'2026-12-27',tpl:'F3',tag:'Lighter day with weekly catch-up',blocks:[P(10,1),
+  K('Report: figures and tables','Report: figures','Build the main figures, captions and numbered tables.'),
+  C('Weekly catch-up','Weekly catch-up','Finish anything missed this week: priority sessions first, then QS and BioBoost, then the report.','b103')]},
+{d:'2026-12-28',tpl:'F4',blocks:[P(10,2),P(10,3),QS(10),BB(10)]},
+{d:'2026-12-29',tpl:'W3',tag:'Study before work',blocks:[P(11,1),
+  K('Report: draft Results','Report: Results','Write the Results text around your figures and statistics.'),P(11,2)]},
+{d:'2026-12-30',tpl:'F4',tag:'All QS and BioBoost done today',blocks:[P(11,3),QS(11),BB(11),P(12,1)]},
+{d:'2026-12-31',tag:'Holiday and work shift',wn:"New Year's Eve shift assumed to run. Confirm with your manager.",rest:{t:"New Year's Eve - no study (work shift)",s:"New Year's Eve",n:'No study. Work 16:00-19:00 (assumed to run).'}},
+{d:'2027-01-01',tag:'Holiday',rest:{t:"New Year's Day - no study",s:"New Year's Day",n:'Holiday. No study.'}},
+{d:'2027-01-02',tag:'Work day. No revision.',rest:{t:'No-revision day (work shift)',s:'No revision',n:'Work 09:00-17:00. Evening off with no revision.'}},
+{d:'2027-01-03',tpl:'F4',tag:'Priority sessions finish. Weekly catch-up.',blocks:[P(12,2),P(12,3),
+  K('Report: polish Results, revise Methods','Report: polish','Check every claim against the data. Tighten wording and fix gaps.'),
+  C('Weekly catch-up: Weeks 8-12 gaps','Weekly catch-up','Patch any weak priority sessions. Spill-over from QS, BioBoost or the report goes here first.','b101')]},
+{d:'2027-01-04',tpl:'F4',tag:'Weeks 1-5 revisit begins',blocks:[
+  E('Wk 1 sessions 1-2','B101 Wk 1 S1-2'),E('Wk 1 session 3 + Wk 2 session 1','B101 Wk 1 S3, 2 S1'),
+  R('Retrieval practice: Wks 8-10','B101 recall Wk 8-10','Closed-notes questions on the priority weeks. Mark and log mistakes.'),
+  K('Report: read full draft, fix gaps','Report: full read','Read start to finish as a marker would. Note missing links between methods and results.')]},
+{d:'2027-01-05',tpl:'W3',tag:'Study before work',blocks:[E('Wk 2 sessions 2-3','B101 Wk 2 S2-3'),E('Wk 3 sessions 1-2','B101 Wk 3 S1-2'),
+  K('Report: references, captions, formatting','Report: refs, format','Check citations, figure numbering and the submission format.')]},
+{d:'2027-01-06',tpl:'F4',blocks:[E('Wk 3 session 3 + Wk 4 session 1','B101 Wk 3 S3, 4 S1'),E('Wk 4 sessions 2-3','B101 Wk 4 S2-3'),
+  R('Retrieval practice: Wks 11-12','B101 recall Wk 11-12','Closed-notes questions on the newest content. Mark and log mistakes.'),
+  K('Microscopy: review protocol and technique notes','Microscopy: protocol','Walk through the procedure and safety points for the Tuesday 12 Jan competency.')]},
+{d:'2027-01-07',tpl:'W3',tag:'Study before work',blocks:[E('Wk 5 sessions 1-2','B101 Wk 5 S1-2'),E('Wk 5 session 3 + weak spots from Wks 1-5','B101 Wk 5 S3 + gaps'),
+  K('Report: final proofread and word count check','Report: proofread','Read aloud, check units, labels and the word limit. Save the final file.')]},
+{d:'2027-01-08',tpl:'F4',tag:'Submit coursework early today',blocks:[
+  R('Timed mixed questions (Wks 1-12)','B101 timed questions','Exam-style questions against the clock, then check answers.'),
+  R('Timed mock paper under exam conditions','B101 mock paper','One sitting, no notes. Mark it and list the weakest topics.'),
+  C('Catch-up: mock paper gaps and overspill','Catch-up + mock review','Redo weak questions. Use spare time for anything still unfinished.','b101'),
+  K('Upload report and confirm QS and BioBoost submissions','Upload + submit check','Submit early where the portal allows. Save receipts. Deadline is Mon 11 Jan 11:00 GMT.')]},
+{d:'2027-01-09',tag:'Work day. Evening off.',rest:{t:'No-revision day (work shift)',s:'No revision',n:'Work 09:00-17:00. Evening off with no revision.'}},
+{d:'2027-01-10',tpl:'S10',tag:'Light day. Finish by 12:30.',blocks:[
+  R('Light recap: summary sheets and weak topics','B101 light recap','No new content. Skim summary sheets and your mistake log.'),
+  K('Microscopy: rehearse the procedure','Microscopy: rehearse','Run through the competency steps aloud, as if assessed on Tuesday.'),
+  C('Final checks and catch-up','Final checks','Confirm submission receipts, exam time and place, kit and travel. No revision after this.','b103')]},
+{d:'2027-01-11',tag:'Deadline day. No revision.'},
+{d:'2027-01-12',tag:'After the timetable. Work shift clash: see competency note.'}
+];
+
+var DEAD=[
+{date:'2027-01-11',s:'11:00',e:'11:15',kind:'deadline',title:'BIOS103 Methods and Results Report due (11:00 GMT)',short:'DUE 11:00 Report',note:'Coursework worth 18% overall. Plan: uploaded Fri 8 Jan, confirmed Sun 10 Jan.'},
+{date:'2027-01-11',s:'11:00',e:'11:15',kind:'deadline',title:'BIOS103 QS Data Tasks due (11:00 GMT)',short:'DUE 11:00 QS Tasks',note:'Weeks 1, 2, 3, 4, 6, 8, 9, 10 and 11. Remaining tasks planned for 18-30 Dec.'},
+{date:'2027-01-11',s:'11:00',e:'11:15',kind:'deadline',title:'BIOS103 BioBoost | Quantitative Skills due (11:00 GMT)',short:'DUE 11:00 BioBoost',note:'Same weeks as the QS Data Tasks. Remaining activities planned for 18-30 Dec.'},
+{date:'2027-01-11',allDay:true,kind:'exam',title:'BIOS101 Exam (PROVISIONAL, time to be confirmed)',short:'EXAM (provisional)',note:'Assumed Monday 11 Jan, all day until the timetable is confirmed. Confirm time and room. No revision today.'},
+{date:'2027-01-12',s:'16:00',e:'16:30',kind:'deadline',title:'BIOS103 Microscopy competency (16:00 GMT)',short:'Microscopy 16:00',note:'Falls after the timetable ends. A usual Tuesday 16:00-19:00 shift clashes: ask for 12 Jan off or a later start.'}
+];
+
+/* ================= events ================= */
+var EV=[],uid=0;
+function add(o){o.id=++uid;EV.push(o);return o}
+DAYS.forEach(function(day){
+  var dow=dparts(day.d).dow,inR=day.d>=START&&day.d<=END,work=null;
+  if(inR){if(dow===6)work=['09:00','17:00'];else if(dow===2||dow===4)work=['16:00','19:00']}
+  if(day.rest)add({date:day.d,allDay:true,cls:'yellow',kind:'rest',pre:'[REST]',label:'Rest',title:day.rest.t,note:day.rest.n,short:day.rest.s});
+  if(day.tpl){
+    var T=TPL[day.tpl];
+    day.blocks.forEach(function(b,i){
+      var sl=T.slots[i],isC=b.c==='catch',subj=isC?b.subj:b.c;
+      add({date:day.d,s:sl[0],e:sl[1],cls:isC?'purple':(b.c==='b101'?'blue':'green'),kind:isC?'catch':'study',
+        pre:subj==='b101'?'[BIOS101]':'[BIOS103]',label:isC?'Catch-up':(b.c==='b101'?'BIOS101':'BIOS103'),subj:subj,title:b.t,note:b.n,short:b.s});
+      if(i<T.slots.length-1){
+        var gap=tm(T.slots[i+1][0])-tm(sl[1]);
+        add({date:day.d,s:sl[1],e:T.slots[i+1][0],cls:'purple',kind:'break',label:'Break',title:(gap>=60?'Lunch break':'Break')+' ('+dur(gap)+')',short:'Break'});
+      }
+    });
+    var last=T.slots[T.slots.length-1][1];
+    add({date:day.d,s:last,e:work?hm(tm(work[0])-30):null,cls:'purple',kind:'break',label:'Break',title:T.after,short:'Break'});
+  }
+  if(work)add({date:day.d,s:work[0],e:work[1],cls:'grey',kind:'work',pre:'[WORK]',label:'Work',title:'Work shift',
+    note:day.wn||(dow===6?'Saturday shift.':'Tuesday/Thursday evening shift.'),short:'Work '+work[0].slice(0,2)+'-'+work[1].slice(0,2)});
+});
+DEAD.forEach(function(x){add({date:x.date,s:x.s,e:x.e,allDay:!!x.allDay,cls:'red',kind:x.kind,pre:'[DEADLINE]',label:x.kind==='exam'?'Exam':'Deadline',title:x.title,note:x.note,short:x.short})});
+var KORD={rest:0,deadline:3,exam:1,study:2,catch:2,work:4,break:2};
+EV.sort(function(a,b){
+  if(a.date!==b.date)return a.date<b.date?-1:1;
+  if(!!a.allDay!==!!b.allDay)return a.allDay?-1:1;
+  var as=a.s?tm(a.s):-1,bs=b.s?tm(b.s):-1;
+  if(as!==bs)return as-bs;
+  return (KORD[a.kind]||0)-(KORD[b.kind]||0);
+});
+function isStudy(e){return e.kind==='study'||e.kind==='catch'}
+function evOn(d){return EV.filter(function(e){return e.date===d})}
+function studyMin(d){return evOn(d).filter(isStudy).reduce(function(a,e){return a+tm(e.e)-tm(e.s)},0)}
+
+var WEEKS=[
+ {n:1,mon:'2026-12-14',label:'Fri 18 - Sun 20 Dec',focus:'Deadlines first: plan the report, clear QS and BioBoost Wk 6.'},
+ {n:2,mon:'2026-12-21',label:'Mon 21 - Sun 27 Dec',focus:'BIOS101 Wk 8-10 priority, report Methods, QS and BioBoost Wk 8-9.'},
+ {n:3,mon:'2026-12-28',label:'Mon 28 Dec - Sun 3 Jan',focus:'Finish priority Wk 10-12, all QS and BioBoost done, report drafted.'},
+ {n:4,mon:'2027-01-04',label:'Mon 4 - Sun 10 Jan',focus:'Revisit Wk 1-5, practice and mock, submit early, light recap Sun.'},
+ {n:5,mon:'2027-01-11',label:'Mon 11 - Tue 12 Jan',focus:'Submit by 11:00, exam (provisional), microscopy Tue 16:00.'}
+];
+function weekDays(w){var o=[];for(var k=0;k<7;k++){var d=addDays(w.mon,k);if(d>=START&&d<=addDays(END,1))o.push(d)}return o}
+function weekStats(w){
+  var s={b101:0,b103:0,catch:0,total:0,catchDays:[],free:[]};
+  weekDays(w).forEach(function(d){
+    var m=0;
+    evOn(d).forEach(function(e){
+      if(!isStudy(e))return;
+      var x=tm(e.e)-tm(e.s);m+=x;s.total+=x;
+      if(e.kind==='catch'){s.catch+=x;s.catchDays.push(lab(d).split(' ').slice(0,2).join(' '))}
+      else if(e.cls==='blue')s.b101+=x;else s.b103+=x;
+    });
+    if(d<=END&&m===0)s.free.push(WD[dparts(d).dow]+' '+dparts(d).d);
+  });
+  return s;
+}
+var CATS=[
+ {k:'blue',n:'BIOS101 revision'},{k:'green',n:'BIOS103 work'},{k:'red',n:'Deadlines, exam, competency'},
+ {k:'grey',n:'Work shifts'},{k:'yellow',n:'Holiday and rest days'},{k:'purple',n:'Breaks and catch-up'}
+];
+
+/* ================= rule checks ================= */
+function checks(){
+  var out=[],days={};
+  EV.forEach(function(e){(days[e.date]=days[e.date]||[]).push(e)});
+  var maxDay=0,maxBlk=0,minGap=999,bad=[];
+  Object.keys(days).forEach(function(d){
+    var st=days[d].filter(isStudy).sort(function(a,b){return tm(a.s)-tm(b.s)});
+    var sum=st.reduce(function(a,e){return a+tm(e.e)-tm(e.s)},0);
+    if(sum>maxDay)maxDay=sum;
+    st.forEach(function(e,i){var l=tm(e.e)-tm(e.s);if(l>maxBlk)maxBlk=l;if(i>0){var g=tm(e.s)-tm(st[i-1].e);if(g<minGap)minGap=g}});
+  });
+  out.push({ok:maxDay<=240,t:'Daily limit',d:'Longest study day is '+dur(maxDay)+' (limit 4h).'});
+  out.push({ok:maxBlk<=50,t:'Block length',d:'Longest study block is '+maxBlk+' minutes (limit 50).'});
+  out.push({ok:minGap>=10,t:'Breaks between blocks',d:'Shortest gap between study blocks is '+minGap+' minutes (minimum 10).'});
+  ['2026-12-25','2026-12-26','2026-12-31','2027-01-01'].forEach(function(d){if(studyMin(d)>0)bad.push(d)});
+  out.push({ok:!bad.length,t:'No study on 25-26 Dec and 31 Dec-1 Jan',d:bad.length?'Study found on '+bad.join(', '):'No study blocks on those four days.'});
+  out.push({ok:studyMin('2027-01-11')===0,t:'No revision on 11 January',d:'Exam day carries deadlines and the provisional exam only.'});
+  var wf=true,wc=true,wd=[];
+  WEEKS.forEach(function(w){var s=weekStats(w);if(!s.free.length)wf=false;if(w.n<=4&&!s.catchDays.length)wc=false;wd.push('Wk '+w.n+': '+s.free.join(', '))});
+  out.push({ok:wf,t:'A complete no-revision day every week',d:wd.join(' | ')});
+  out.push({ok:wc,t:'Catch-up time every week',d:'Catch-up blocks on Fri 18 Dec, Sun 27 Dec, Sun 3 Jan and Fri 8 Jan.'});
+  var workOk=EV.filter(function(e){return e.kind==='work'}).every(function(e){var dw=dparts(e.date).dow;return dw===6?(e.s==='09:00'&&e.e==='17:00'):((dw===2||dw===4)&&e.s==='16:00'&&e.e==='19:00')});
+  var clash=EV.some(function(e){return e.kind==='work'&&evOn(e.date).some(function(o){return isStudy(o)&&tm(o.s)<tm(e.e)&&tm(o.e)>tm(e.s)})});
+  out.push({ok:workOk&&!clash,t:'Work shifts',d:'Saturdays 09:00-17:00, Tuesdays and Thursdays 16:00-19:00, with no study overlapping a shift.'});
+  return out;
+}
+
+/* ================= iCalendar ================= */
+function icsEsc(s){return String(s).replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\r?\n/g,'\\n')}
+function fold(line){
+  var enc=new TextEncoder();
+  if(enc.encode(line).length<=75)return line;
+  var out=[],cur='',bytes=0,i=0,chars=Array.from(line);
+  for(i=0;i<chars.length;i++){var b=enc.encode(chars[i]).length;
+    if(bytes+b>75){out.push(cur);cur=' '+chars[i];bytes=1+b}else{cur+=chars[i];bytes+=b}}
+  out.push(cur);return out.join('\r\n');
+}
+function dtl(d,t){return d.replace(/-/g,'')+'T'+t.replace(':','')+'00'}
+function alarm(trig,desc){return ['BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsEsc(desc),'TRIGGER:'+trig,'END:VALARM']}
+function buildICS(){
+  var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//January 2027 Revision Planner//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH',
+    'X-WR-CALNAME:January 2027 Revision Planner','X-WR-TIMEZONE:Europe/London',
+    'BEGIN:VTIMEZONE','TZID:Europe/London',
+    'BEGIN:DAYLIGHT','TZOFFSETFROM:+0000','TZOFFSETTO:+0100','TZNAME:BST','DTSTART:19700329T010000','RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU','END:DAYLIGHT',
+    'BEGIN:STANDARD','TZOFFSETFROM:+0100','TZOFFSETTO:+0000','TZNAME:GMT','DTSTART:19701025T020000','RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU','END:STANDARD',
+    'END:VTIMEZONE'];
+  var stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+  EV.filter(function(e){return e.kind!=='break'}).forEach(function(e){
+    var sum=e.pre+' '+e.title,desc=[e.note||''];
+    if(isStudy(e))desc.push('Planned 50-minute block. Take a break of at least 10 minutes afterwards.');
+    if(e.kind==='exam')desc.push('Reminders count from midnight at the start of the day because the exam time is not confirmed.');
+    var v=['BEGIN:VEVENT','UID:jan2027-'+pad(e.id)+'@revision-planner.local','DTSTAMP:'+stamp];
+    if(e.allDay){v.push('DTSTART;VALUE=DATE:'+e.date.replace(/-/g,''),'DTEND;VALUE=DATE:'+addDays(e.date,1).replace(/-/g,''));
+      v.push('TRANSP:'+(e.kind==='rest'?'TRANSPARENT':'OPAQUE'))}
+    else{v.push('DTSTART;TZID=Europe/London:'+dtl(e.date,e.s),'DTEND;TZID=Europe/London:'+dtl(e.date,e.e),'TRANSP:OPAQUE')}
+    v.push('SUMMARY:'+icsEsc(sum),'DESCRIPTION:'+icsEsc(desc.filter(Boolean).join('\n')),
+      'CATEGORIES:'+(e.kind==='rest'?'REST':e.kind==='work'?'WORK':(e.kind==='deadline'||e.kind==='exam')?'DEADLINE':e.subj==='b101'?'BIOS101':'BIOS103'),
+      'STATUS:'+(e.kind==='exam'?'TENTATIVE':'CONFIRMED'),'SEQUENCE:0');
+    if(isStudy(e))v=v.concat(alarm('-PT15M','Study block starts in 15 minutes'));
+    else if(e.kind==='work')v=v.concat(alarm('-PT30M','Work shift starts in 30 minutes'));
+    else if(e.kind==='deadline'||e.kind==='exam')v=v.concat(alarm('-P7D','Deadline in 7 days'),alarm('-P2D','Deadline in 2 days'),alarm('-PT2H','Deadline in 2 hours'));
+    v.push('END:VEVENT');L=L.concat(v);
+  });
+  L.push('END:VCALENDAR');
+  return L.map(fold).join('\r\n')+'\r\n';
+}
+
+/* ================= tiny zip (store) ================= */
+var CRC=null;
+function crc32(u8){
+  if(!CRC){CRC=new Uint32Array(256);for(var n=0;n<256;n++){var c=n;for(var k=0;k<8;k++)c=c&1?(0xEDB88320^(c>>>1)):(c>>>1);CRC[n]=c>>>0}}
+  var crc=0xFFFFFFFF;for(var i=0;i<u8.length;i++)crc=CRC[(crc^u8[i])&255]^(crc>>>8);return (crc^0xFFFFFFFF)>>>0;
+}
+function makeZip(name,u8){
+  var nb=new TextEncoder().encode(name),n=new Date();
+  var dt=((n.getHours()<<11)|(n.getMinutes()<<5)|(n.getSeconds()>>1))&0xFFFF,dd=(((Math.max(n.getFullYear(),1980)-1980)<<9)|((n.getMonth()+1)<<5)|n.getDate())&0xFFFF;
+  var crc=crc32(u8),lh=30+nb.length,cd=46+nb.length,total=lh+u8.length+cd+22;
+  var buf=new Uint8Array(total),v=new DataView(buf.buffer),p=0;
+  v.setUint32(p,0x04034b50,true);v.setUint16(p+4,20,true);v.setUint16(p+6,0x0800,true);v.setUint16(p+8,0,true);v.setUint16(p+10,dt,true);v.setUint16(p+12,dd,true);
+  v.setUint32(p+14,crc,true);v.setUint32(p+18,u8.length,true);v.setUint32(p+22,u8.length,true);v.setUint16(p+26,nb.length,true);v.setUint16(p+28,0,true);
+  buf.set(nb,p+30);buf.set(u8,p+lh);
+  var q=lh+u8.length;
+  v.setUint32(q,0x02014b50,true);v.setUint16(q+4,20,true);v.setUint16(q+6,20,true);v.setUint16(q+8,0x0800,true);v.setUint16(q+10,0,true);v.setUint16(q+12,dt,true);v.setUint16(q+14,dd,true);
+  v.setUint32(q+16,crc,true);v.setUint32(q+20,u8.length,true);v.setUint32(q+24,u8.length,true);v.setUint16(q+28,nb.length,true);
+  v.setUint16(q+30,0,true);v.setUint16(q+32,0,true);v.setUint16(q+34,0,true);v.setUint16(q+36,0,true);v.setUint32(q+38,0,true);v.setUint32(q+42,0,true);
+  buf.set(nb,q+46);
+  var r=q+cd;
+  v.setUint32(r,0x06054b50,true);v.setUint16(r+4,0,true);v.setUint16(r+6,0,true);v.setUint16(r+8,1,true);v.setUint16(r+10,1,true);
+  v.setUint32(r+12,cd,true);v.setUint32(r+16,q,true);v.setUint16(r+20,0,true);
+  return buf;
+}
+
+/* ================= minimal PDF writer ================= */
+var FW=[278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,
+667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,
+556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584];
+function PDFDoc(W,H){
+  var pages=[],cur=null;
+  function asc(s){return String(s).replace(/[\u2013\u2014\u2212]/g,'-').replace(/[\u2018\u2019]/g,"'").replace(/[\u201C\u201D]/g,'"').replace(/\u00D7/g,'x').replace(/[\u00B7\u2022]/g,'-').replace(/\u00A0/g,' ').replace(/[^\x20-\x7E]/g,'')}
+  function f(n){return String(Math.round(n*100)/100)}
+  function rgb(h){h=h.replace('#','');return [0,2,4].map(function(i){return f(parseInt(h.substr(i,2),16)/255)}).join(' ')}
+  function pe(s){return asc(s).replace(/([\\()])/g,'\\$1')}
+  function tw(s,size,bold){s=asc(s);var w=0;for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);w+=(c>=32&&c<127)?FW[c-32]:556}return w*size/1000*(bold?1.07:1)}
+  function fit(s,size,bold,max){s=asc(s);if(tw(s,size,bold)<=max)return s;while(s.length>1&&tw(s+'...',size,bold)>max)s=s.slice(0,-1);return s.replace(/\s+$/,'')+'...'}
+  function wrap(s,size,bold,max,maxLines){
+    var words=asc(s).split(/\s+/),lines=[],line='';
+    words.forEach(function(w){var t=line?line+' '+w:w;if(tw(t,size,bold)<=max||!line)line=t;else{lines.push(line);line=w}});
+    if(line)lines.push(line);
+    if(maxLines&&lines.length>maxLines){lines=lines.slice(0,maxLines);lines[maxLines-1]=fit(lines[maxLines-1]+' ...',size,bold,max)}
+    return lines;
+  }
+  var api={
+    W:W,H:H,tw:tw,fit:fit,wrap:wrap,
+    add:function(){cur={ops:[]};pages.push(cur);return pages.length},
+    use:function(i){cur=pages[i]},
+    count:function(){return pages.length},
+    rect:function(x,y,w,h,fill,stroke,lw){
+      var o='';if(fill)o+=rgb(fill)+' rg ';if(stroke)o+=rgb(stroke)+' RG '+f(lw||0.5)+' w ';
+      cur.ops.push(o+f(x)+' '+f(H-y-h)+' '+f(w)+' '+f(h)+' re '+(fill&&stroke?'B':fill?'f':'S'));
+    },
+    line:function(x1,y1,x2,y2,col,lw){cur.ops.push(rgb(col)+' RG '+f(lw||0.5)+' w '+f(x1)+' '+f(H-y1)+' m '+f(x2)+' '+f(H-y2)+' l S')},
+    text:function(x,y,s,size,o){
+      o=o||{};s=asc(s);var w=tw(s,size,o.b);
+      if(o.align==='right')x-=w;else if(o.align==='center')x-=w/2;
+      cur.ops.push('BT /'+(o.b?'F2':'F1')+' '+f(size)+' Tf '+rgb(o.color||'#132033')+' rg '+f(x)+' '+f(H-y)+' Td ('+pe(s)+') Tj ET');
+    },
+    build:function(title){
+      var N=pages.length,objs=[];
+      objs[1]='<< /Type /Catalog /Pages 2 0 R >>';
+      var kids=[];for(var i=0;i<N;i++)kids.push((6+2*i)+' 0 R');
+      objs[2]='<< /Type /Pages /Kids ['+kids.join(' ')+'] /Count '+N+' >>';
+      objs[3]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>';
+      objs[4]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>';
+      objs[5]='<< /Title ('+pe(title)+') /Creator (January 2027 Revision Planner) /Producer (January 2027 Revision Planner) >>';
+      pages.forEach(function(p,i){
+        var content=p.ops.join('\n');
+        objs[6+2*i]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+W+' '+H+'] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents '+(7+2*i)+' 0 R >>';
+        objs[7+2*i]='<< /Length '+content.length+' >>\nstream\n'+content+'\nendstream';
+      });
+      var out='%PDF-1.4\n%\u00E2\u00E3\u00CF\u00D3\n',offs=[];
+      for(var n=1;n<objs.length;n++){offs[n]=out.length;out+=n+' 0 obj\n'+objs[n]+'\nendobj\n'}
+      var xr=out.length;
+      out+='xref\n0 '+objs.length+'\n0000000000 65535 f \n';
+      for(var m=1;m<objs.length;m++)out+=String(offs[m]).padStart(10,'0')+' 00000 n \n';
+      out+='trailer\n<< /Size '+objs.length+' /Root 1 0 R /Info 5 0 R >>\nstartxref\n'+xr+'\n%%EOF\n';
+      var u=new Uint8Array(out.length);for(var k=0;k<out.length;k++)u[k]=out.charCodeAt(k)&255;
+      return u;
+    }
+  };
+  return api;
+}
+
+/* PDF palette (print-friendly, independent of screen theme) */
+var PC={
+  blue:{f:'#DCE8FB',i:'#123A8C',s:'#2563D6'},green:{f:'#D6EFE0',i:'#0D5A2F',s:'#1F8A4C'},
+  red:{f:'#F9D9DC',i:'#8A1620',s:'#D12F3B'},grey:{f:'#E2E6EC',i:'#333D4B',s:'#6A7585'},
+  yellow:{f:'#FFEEB0',i:'#6B4E00',s:'#D99A00'},purple:{f:'#E5DCF8',i:'#47288F',s:'#7A4FD0'}
+};
+var INK='#132033',MUT='#54647A',LINE='#C7CFDB';
+
+function pdfLegend(d,x,y){
+  CATS.forEach(function(c){
+    d.rect(x,y-6,8,8,PC[c.k].s);
+    d.text(x+11,y+1,c.n,7,{color:INK});
+    x+=11+d.tw(c.n,7)+14;
+  });
+}
+function entryTime(e){return e.allDay?'All day':(e.e?e.s+'-'+e.e:e.s+' on')}
+function entryLine(e){return (e.pre?e.pre+' ':'')+e.title}
+
+function pdfDetailed(){
+  var d=PDFDoc(842,595),M=28,GAP=18,colW=(842-2*M-GAP)/2,TOP=64,BOT=565;
+  var col=0,y=TOP,pg=0;
+  function newPage(){
+    d.add();pg++;
+    d.text(M,28,'January 2027 Revision Planner',15,{b:1,color:INK});
+    d.text(M,40,'Detailed daily timetable  |  Fri 18 Dec 2026 to Mon 11 Jan 2027  |  Europe/London',7.5,{color:MUT});
+    pdfLegend(d,M,54);
+    d.line(M,59,842-M,59,LINE,0.6);
+    col=0;y=TOP;
+  }
+  function rowH(e){return e.kind==='break'?9:(e.note?20:12.5)}
+  function dayH(day){
+    var h=17+3;evOn(day.d).forEach(function(e){h+=rowH(e)+1.5});
+    if(day.tag)h+=0;
+    return h+6;
+  }
+  newPage();
+  DAYS.forEach(function(day){
+    var evs=evOn(day.d),h=dayH(day);
+    if(y+h>BOT){if(col===0){col=1;y=TOP}else newPage()}
+    var x=M+col*(colW+GAP),sm=studyMin(day.d);
+    var hasRest=evs.some(function(e){return e.kind==='rest'});
+    var hdr=hasRest?PC.yellow.f:(day.d>=END?PC.red.f:'#E6EAF1');
+    d.rect(x,y,colW,17,hdr);
+    d.text(x+5,y+11.5,lab(day.d),9,{b:1,color:INK});
+    var dx=x+5+d.tw(lab(day.d),9,true)+8;
+    var meta=(sm?'Study '+dur(sm):'No study');
+    d.text(x+colW-5,y+11.5,meta,7.5,{b:1,color:INK,align:'right'});
+    if(day.tag){var room=colW-(dx-x)-d.tw(meta,7.5,true)-18;d.text(dx,y+11.5,d.fit(day.tag,7,false,room),7,{color:MUT})}
+    var yy=y+19;
+    evs.forEach(function(e){
+      var c=PC[e.cls],rh=rowH(e);
+      if(e.kind==='break'){
+        d.rect(x,yy,colW,rh,'#F2EEFA');
+        d.text(x+7,yy+6.4,(e.e?e.s+'-'+e.e:e.s+' on')+'   '+e.title,6.4,{color:PC.purple.i});
+      }else{
+        d.rect(x,yy,colW,rh,c.f);d.rect(x,yy,3,rh,c.s);
+        d.text(x+7,yy+8.3,entryTime(e),7.2,{b:1,color:c.i});
+        d.text(x+62,yy+8.3,d.fit(entryLine(e),7.8,true,colW-67),7.8,{b:1,color:c.i});
+        if(e.note)d.text(x+62,yy+16.4,d.fit(e.note,6.4,false,colW-67),6.4,{color:c.i});
+      }
+      yy+=rh+1.5;
+    });
+    y+=h+4;
+  });
+  var total=d.count();
+  for(var i=0;i<total;i++){d.use(i);d.text(842-M,584,'Page '+(i+1)+' of '+total,7,{color:MUT,align:'right'});
+    d.text(M,584,'Breaks are shown here but not exported to the calendar. Times are UK local time (GMT in January).',7,{color:MUT})}
+  return d.build('January 2027 Revision Planner - detailed timetable');
+}
+
+function pdfOverview(){
+  var d=PDFDoc(842,595),M=28;
+  d.add();
+  d.text(M,30,'January 2027 Revision Planner',17,{b:1,color:INK});
+  d.text(M,43,'Weekly overview  |  Fri 18 Dec 2026 to Mon 11 Jan 2027, plus Tue 12 Jan competency  |  Europe/London',7.5,{color:MUT});
+  pdfLegend(d,M,57);
+  var labelW=94,cw=(842-2*M-labelW)/7,gy=68,hh=13,rh=66;
+  var names=['MON','TUE','WED','THU','FRI','SAT','SUN'];
+  d.rect(M,gy,labelW,hh,'#DDE3EC',LINE,0.5);d.text(M+5,gy+9,'WEEK',6.8,{b:1,color:MUT});
+  for(var k=0;k<7;k++){d.rect(M+labelW+k*cw,gy,cw,hh,'#DDE3EC',LINE,0.5);d.text(M+labelW+k*cw+5,gy+9,names[k],6.8,{b:1,color:MUT})}
+  WEEKS.forEach(function(w,r){
+    var y=gy+hh+r*rh,st=weekStats(w);
+    d.rect(M,y,labelW,rh,'#EEF1F6',LINE,0.5);
+    d.text(M+5,y+10,'WEEK '+w.n,8,{b:1,color:INK});
+    d.text(M+5,y+19,w.label,6.4,{color:MUT});
+    d.text(M+5,y+28.5,'Study '+dur(st.total),7,{b:1,color:INK});
+    var ly=y+37;
+    d.wrap('No revision: '+st.free.join(', '),6,false,labelW-10,2).forEach(function(t){d.text(M+5,ly,t,6,{color:INK});ly+=7});
+    d.wrap(w.focus,5.8,false,labelW-10,3).forEach(function(t){d.text(M+5,ly+1,t,5.8,{color:MUT});ly+=6.6});
+    for(var c=0;c<7;c++){
+      var date=addDays(w.mon,c),x=M+labelW+c*cw,inR=date>=START&&date<=addDays(END,1);
+      d.rect(x,y,cw,rh,inR?'#FFFFFF':'#F1F3F7',LINE,0.5);
+      if(!inR)continue;
+      d.text(x+4,y+9,String(dparts(date).d),7.4,{b:1,color:MUT});
+      var cy=y+12;
+      evOn(date).filter(function(e){return e.kind!=='break'}).forEach(function(e){
+        var p=PC[e.cls];
+        d.rect(x+3,cy,cw-6,9.2,p.f);
+        d.text(x+5,cy+6.6,d.fit(e.short,6.2,false,cw-10),6.2,{color:p.i});
+        cy+=10.2;
+      });
+    }
+  });
+  var py=gy+hh+WEEKS.length*rh+9,ph=565-py;
+  /* deadlines */
+  var w1=300,x1=M;
+  d.rect(x1,py,w1,ph,'#FFFFFF',LINE,0.6);
+  d.text(x1+7,py+12,'Deadlines (all times UK, GMT)',8.2,{b:1,color:INK});
+  var dy=py+18;
+  var DL=[['Mon 11 Jan, 11:00','BIOS103 Methods and Results Report (18% of module)'],['Mon 11 Jan, 11:00','BIOS103 QS Data Tasks (Wks 1-4, 6, 8-11)'],
+    ['Mon 11 Jan, 11:00','BIOS103 BioBoost | Quantitative Skills (same weeks)'],['Mon 11 Jan, all day','BIOS101 exam (PROVISIONAL, time to be confirmed)'],
+    ['Tue 12 Jan, 16:00','BIOS103 Microscopy competency']];
+  DL.forEach(function(x){
+    d.rect(x1+6,dy,w1-12,20,PC.red.f);d.rect(x1+6,dy,3,20,PC.red.s);
+    d.text(x1+13,dy+8,x[0],6.8,{b:1,color:PC.red.i});
+    d.text(x1+13,dy+16,d.fit(x[1],7,false,w1-24),7,{color:PC.red.i});
+    dy+=22;
+  });
+  /* hours */
+  var x2=x1+w1+10,w2=232;
+  d.rect(x2,py,w2,ph,'#FFFFFF',LINE,0.6);
+  d.text(x2+7,py+12,'Study hours by week',8.2,{b:1,color:INK});
+  var stats=WEEKS.filter(function(w){return w.n<=4}).map(function(w){return {w:w,s:weekStats(w)}});
+  var mx=Math.max.apply(null,stats.map(function(o){return o.s.total})),by=py+22,bw=w2-14-46-70;
+  stats.forEach(function(o){
+    d.text(x2+7,by+8,'Week '+o.w.n,6.8,{b:1,color:INK});
+    var bx=x2+50,segs=[[o.s.b101,'blue'],[o.s.b103,'green'],[o.s.catch,'purple']];
+    segs.forEach(function(sg){var wd=bw*sg[0]/mx;if(wd>0){d.rect(bx,by,wd,10,PC[sg[1]].s);bx+=wd}});
+    d.text(x2+w2-7,by+8,dur(o.s.total),7,{b:1,color:INK,align:'right'});
+    by+=17;
+  });
+  var tot=stats.reduce(function(a,o){return a+o.s.total},0),blocks=EV.filter(isStudy).length;
+  var workMin=EV.filter(function(e){return e.kind==='work'}).reduce(function(a,e){return a+tm(e.e)-tm(e.s)},0);
+  d.text(x2+7,by+6,'Total '+dur(tot)+' in '+blocks+' blocks',7,{b:1,color:INK});
+  d.text(x2+7,by+16,'Work shifts: '+dur(workMin)+' across '+EV.filter(function(e){return e.kind==='work'}).length+' shifts',6.8,{color:MUT});
+  d.text(x2+7,by+25,'Blue BIOS101, green BIOS103, purple catch-up',6.4,{color:MUT});
+  /* rules */
+  var x3=x2+w2+10,w3=842-M-x3;
+  d.rect(x3,py,w3,ph,'#FFFFFF',LINE,0.6);
+  d.text(x3+7,py+12,'Built-in rules',8.2,{b:1,color:INK});
+  var rules=['Max 4 h of revision or coursework a day.','Study blocks of 50 min, then a break of 15 min or more.','Catch-up block every week (purple).',
+    'A complete no-revision day every week.','No study 25-26 Dec or 31 Dec-1 Jan.','No exam revision on Mon 11 Jan.','Submit coursework early: target Fri 8 Jan.',
+    'Work: Sat 09:00-17:00, Tue and Thu 16:00-19:00.'];
+  var ry=py+23;
+  rules.forEach(function(t){d.wrap(t,6.8,false,w3-20,2).forEach(function(l,i){d.text(x3+(i?14:7),ry,(i?'':'- ')+l,6.8,{color:INK});ry+=8.2})});
+  d.text(M,584,'Plan assumes QS Data Tasks and BioBoost for Weeks 1-4 are done, so Weeks 6, 8, 9, 10 and 11 remain (about 1 hour each). BIOS101 exam time is provisional.',6.6,{color:MUT});
+  return d.build('January 2027 Revision Planner - weekly overview');
+}
+
+/* expose for testing */
+var API={EV:EV,DAYS:DAYS,WEEKS:WEEKS,checks:checks,buildICS:buildICS,pdfDetailed:pdfDetailed,pdfOverview:pdfOverview,makeZip:makeZip,FW:FW,studyMin:studyMin,weekStats:weekStats};
+try{(typeof window!=='undefined'?window:globalThis).__planner=API}catch(e){}
+
+/* ================= DOM ================= */
+if(typeof document==='undefined'||!document.getElementById('app'))return;
+var $=function(id){return document.getElementById(id)};
+
+function setStatus(t){$('status').textContent=t}
+function countdown(){
+  try{
+    var target=Date.UTC(2027,0,11,11,0),now=Date.now(),ms=target-now;
+    if(ms>0){var dd=Math.floor(ms/864e5);$('countdown').innerHTML='<b>'+dd+'</b><span>days until the<br>11 Jan 11:00 deadlines</span>'}
+    else $('countdown').innerHTML='<span>The 11 Jan 11:00 deadlines have passed.</span>';
+  }catch(e){}
+}
+function renderStatic(){
+  $('legend').innerHTML=CATS.map(function(c){return '<span class="k c-'+c.k+'"><i></i>'+esc(c.n)+'</span>'}).join('');
+  var blocks=EV.filter(isStudy),tot=blocks.reduce(function(a,e){return a+tm(e.e)-tm(e.s)},0);
+  var work=EV.filter(function(e){return e.kind==='work'}),wm=work.reduce(function(a,e){return a+tm(e.e)-tm(e.s)},0);
+  var restDays=DAYS.filter(function(x){return x.d>=START&&x.d<=END&&studyMin(x.d)===0}).length;
+  $('stats').innerHTML=[[dur(tot),'study in '+blocks.length+' blocks of 50 min'],[dur(wm),'work across '+work.length+' shifts'],[String(restDays),'days with no revision'],['4h max','revision on any one day']]
+    .map(function(s){return '<div class="stat"><b>'+esc(s[0])+'</b><span>'+esc(s[1])+'</span></div>'}).join('');
+}
+function chip(e){return '<span class="chip c-'+e.cls+'">'+esc(e.short)+'</span>'}
+function renderOverview(){
+  var h='<div class="ovwrap"><div class="ov" role="table" aria-label="Weekly overview">';
+  h+='<div class="ovh">Week</div>'+['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(function(n){return '<div class="ovh">'+n+'</div>'}).join('');
+  WEEKS.forEach(function(w){
+    var st=weekStats(w);
+    h+='<div class="wk"><b>Week '+w.n+'</b><span>'+esc(w.label)+'</span><span class="hrs">'+dur(st.total)+'</span><small>No revision: '+esc(st.free.join(', '))+'</small><small>'+esc(w.focus)+'</small></div>';
+    for(var k=0;k<7;k++){
+      var date=addDays(w.mon,k),inR=date>=START&&date<=addDays(END,1);
+      if(!inR){h+='<div class="cell out" aria-hidden="true"></div>';continue}
+      h+='<div class="cell"><span class="dn">'+dparts(date).d+'</span>'+evOn(date).filter(function(e){return e.kind!=='break'}).map(chip).join('')+'</div>';
+    }
+  });
+  h+='</div></div>';
+  var stats=WEEKS.filter(function(w){return w.n<=4}).map(function(w){return{w:w,s:weekStats(w)}});
+  var mx=Math.max.apply(null,stats.map(function(o){return o.s.total}));
+  h+='<div class="cards">';
+  h+='<div class="card"><h3>Deadlines (UK time)</h3><ul class="dl">'+DEAD.map(function(x){
+    return '<li class="c-red"><b>'+esc(lab(x.date)+(x.allDay?', all day':', '+x.s))+'</b>'+esc(x.title.replace(/ \(.*\)$/,''))+(x.kind==='exam'?' (provisional)':'')+'</li>'}).join('')+'</ul></div>';
+  h+='<div class="card"><h3>Study hours by week</h3><div class="bars">'+stats.map(function(o){
+    var p=function(v){return (100*v/mx).toFixed(1)+'%'};
+    return '<div class="bar"><span>Week '+o.w.n+'</span><div class="tr"><i style="width:'+p(o.s.b101)+';background:var(--blue)"></i><i style="width:'+p(o.s.b103)+';background:var(--green)"></i><i style="width:'+p(o.s.catch)+';background:var(--purple)"></i></div><span class="v">'+dur(o.s.total)+'</span></div>'}).join('')+'</div>'+
+    '<p style="margin-top:10px;font-size:12.5px;color:var(--muted)">Blue BIOS101, green BIOS103, purple catch-up. Week 4 is heaviest on practice and the mock paper.</p></div>';
+  h+='<div class="card"><h3>How the plan works</h3><ul class="plain"><li>Coursework and the QS and BioBoost tasks come first, finished by 30 Dec and 7 Jan.</li><li>BIOS101 Weeks 8-12 are revised first, then Weeks 1-5 are revisited before the mock paper.</li><li>Submit coursework by Fri 8 Jan. Sun 10 Jan is a light day. Nothing is revised on 11 Jan.</li><li>Tue 12 Jan 16:00 microscopy is shown here and in the calendar.</li></ul></div>';
+  h+='</div>';
+  $('p-overview').innerHTML=h;
+}
+function rowHTML(e){
+  var t=e.allDay?'All day':(e.e?e.s+' - '+e.e:e.s+' on');
+  if(e.kind==='break')return '<li class="row brk c-purple"><span class="time">'+t+'</span><span class="what">'+esc(e.title)+'</span></li>';
+  return '<li class="row c-'+e.cls+'"><span class="time">'+t+'</span><span class="cat">'+esc(e.label)+'</span><span class="what">'+esc(e.title)+(e.note?'<small>'+esc(e.note)+'</small>':'')+'</span></li>';
+}
+function plateClass(d){
+  var evs=evOn(d),b1=0,b3=0,work=evs.some(function(e){return e.kind==='work'});
+  if(evs.some(function(e){return e.kind==='exam'}))return{c:'red',w:work};
+  if(evs.some(function(e){return e.kind==='rest'}))return{c:'yellow',w:work};
+  evs.forEach(function(e){if(isStudy(e)){var m=tm(e.e)-tm(e.s);if(e.subj==='b101')b1+=m;else b3+=m}});
+  if(!b1&&!b3)return{c:work?'grey':'yellow',w:false};
+  return{c:b1>=b3?'blue':'green',w:work};
+}
+function renderDaily(){
+  var h='<div class="platebox"><div class="plate" role="group" aria-label="Plate map of days">';
+  h+='<span></span>'+['M','T','W','T','F','S','S'].map(function(n){return '<span class="pl">'+n+'</span>'}).join('');
+  WEEKS.forEach(function(w,r){
+    h+='<span class="pl">'+'ABCDE'[r]+'</span>';
+    for(var k=0;k<7;k++){
+      var date=addDays(w.mon,k);
+      if(!(date>=START&&date<=addDays(END,1))){h+='<span class="well void" aria-hidden="true"></span>';continue}
+      var pc=plateClass(date),m=studyMin(date);
+      h+='<button type="button" class="well c-'+pc.c+(pc.w?' work':'')+'" data-d="'+date+'" title="'+'ABCDE'[r]+(k+1)+' '+esc(lab(date))+(m?' - '+dur(m)+' study':'')+'" aria-label="Jump to '+esc(lab(date))+'">'+dparts(date).d+'</button>';
+    }
+  });
+  h+='</div><p>Each well is a day: A-E are weeks, columns run Monday to Sunday. Blue and green show the main subject, yellow a holiday or rest day, red the deadline day. A grey ring means a work shift. Tap a well to jump to that day.</p></div>';
+  WEEKS.forEach(function(w){
+    var st=weekStats(w),ds=DAYS.filter(function(x){return weekDays(w).indexOf(x.d)>-1});
+    h+='<div class="weekhead"><h2>Week '+w.n+'</h2><span>'+esc(w.label)+' &middot; study '+dur(st.total)+'</span></div><div class="days">';
+    ds.forEach(function(day){
+      var p=dparts(day.d),evs=evOn(day.d),m=studyMin(day.d),pills='';
+      if(m)pills+='<span class="pill">'+dur(m)+' study</span>';
+      var wk=evs.filter(function(e){return e.kind==='work'})[0];
+      if(wk)pills+='<span class="pill c-grey">Work '+wk.s+'-'+wk.e+'</span>';
+      if(evs.some(function(e){return e.kind==='rest'}))pills+='<span class="pill c-yellow">Rest or holiday</span>';
+      if(!m&&!wk&&!evs.some(function(e){return e.kind==='rest'})&&day.d<=END)pills+='<span class="pill c-red">No revision</span>';
+      h+='<article class="day" id="day-'+day.d+'"><header><div class="date"><span class="num">'+p.d+'</span><span class="wd">'+WD[p.dow]+'</span><span class="mo">'+MON[p.m-1]+'</span></div><div class="meta">'+pills+'</div></header>';
+      if(day.tag)h+='<p class="tagline">'+esc(day.tag)+'</p>';
+      h+='<ul class="rows">'+evs.map(rowHTML).join('')+'</ul></article>';
+    });
+    h+='</div>';
+  });
+  $('p-daily').innerHTML=h;
+  Array.prototype.forEach.call($('p-daily').querySelectorAll('.well[data-d]'),function(b){
+    b.addEventListener('click',function(){var el=$('day-'+b.getAttribute('data-d'));if(el){el.scrollIntoView({block:'start',behavior:'smooth'});el.setAttribute('tabindex','-1');el.focus({preventScroll:true})}});
+  });
+}
+function renderRules(){
+  var ck=checks();
+  var h='<h2>Rule checks, calculated from the timetable</h2><ul class="chk">'+ck.map(function(c){
+    return '<li><span class="'+(c.ok?'ok':'bad')+'">'+(c.ok?'Pass':'Check')+'</span><div><b>'+esc(c.t)+'</b><small>'+esc(c.d)+'</small></div></li>'}).join('')+'</ul>';
+  h+='<h2>Assumptions</h2><ul class="plain">'+[
+    'QS Data Tasks and BioBoost activities for Weeks 1-4 are already done (about half of the nine). Weeks 6, 8, 9, 10 and 11 remain, about 1 hour each, so each is one 50-minute block. Overrun goes to catch-up.',
+    'BIOS101 has 3 taught sessions a week. Weeks 8-12 (15 sessions) get one block each. Weeks 1-5 (15 sessions) are paired, two per block, because they are a lighter revisit.',
+    'Every study day starts between 09:00 and 10:00 and finishes by 15:00. Breaks are 15 minutes, with a longer lunch. Only study, work, rest and deadline entries are exported to the calendar.',
+    'Work shifts run as stated, including Thu 24 Dec, Sat 26 Dec and Thu 31 Dec. Confirm those three with your manager.',
+    'The BIOS101 exam is an all-day provisional event on Mon 11 Jan. No revision is planned that day. Update the time once it is published.',
+    'The microscopy competency is Tue 12 Jan, 16:00 GMT. A normal Tuesday 16:00-19:00 shift would clash, so ask for that day off or a later start.',
+    'Calendar reminders: study 15 minutes before, work 30 minutes before, deadlines 7 days, 2 days and 2 hours before. For the all-day exam, reminders count from midnight at the start of 11 Jan.'
+  ].map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ul>';
+  $('p-rules').innerHTML=h;
+}
+
+/* tabs */
+var TABS=['overview','daily','rules'];
+function showTab(n){
+  TABS.forEach(function(t){var on=t===n;$('tab-'+t).setAttribute('aria-selected',on?'true':'false');$('p-'+t).hidden=!on});
+  try{sessionStorage.setItem('jan27tab',n)}catch(e){}
+}
+TABS.forEach(function(t){$('tab-'+t).addEventListener('click',function(){showTab(t)})});
+
+/* ================= saving files ================= */
+async function getDL(){try{if(window.claude&&window.claude.use)return await window.claude.use('downloads')}catch(e){}return null}
+function blobFallback(name,data,mime){
+  try{
+    var url=URL.createObjectURL(new Blob([data],{type:mime})),a=document.createElement('a');
+    a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},4000);
+    return {ok:true,code:'browser'};
+  }catch(e){return {ok:false,code:'unavailable'}}
+}
+async function doSave(name,data,mime){
+  var dl=await getDL();
+  if(!dl)return blobFallback(name,data,mime);
+  try{await dl.save({filename:name,data:data});return {ok:true,code:'saved'}}
+  catch(err){return {ok:false,code:(err&&err.code)||'unavailable'}}
+}
+function report(r,name){
+  if(r.ok)setStatus(r.code==='saved'?'Saved '+name+'.':'Download started: '+name+'.');
+  else if(r.code==='declined')setStatus('Save cancelled.');
+  else if(r.code==='rate_limited')setStatus('Another save is waiting for your answer. Finish it, then try again.');
+  else setStatus('Saving files is not available in this view. Open the planner in claude.ai in a desktop or mobile browser and try again.');
+}
+async function savePDF(kind){
+  setStatus('Building PDF...');
+  var bytes,name;
+  try{
+    if(kind==='detail'){bytes=pdfDetailed();name='january-2027-detailed-timetable.pdf'}
+    else{bytes=pdfOverview();name='january-2027-weekly-overview.pdf'}
+  }catch(e){setStatus('Could not build the PDF.');return}
+  report(await doSave(name,bytes,'application/pdf'),name);
+}
+function showIcs(){
+  $('icsText').value=buildICS();$('icsPanel').hidden=false;
+  try{$('icsPanel').scrollIntoView({block:'nearest'})}catch(e){}
+}
+async function saveICS(){
+  var text=buildICS(),name='january-2027-revision-planner.ics';
+  var r=await doSave(name,text,'text/calendar');
+  if(!r.ok&&(r.code==='rejected_extension'||r.code==='extension_not_enabled')){
+    showIcs();setStatus('This view cannot save .ics files directly. Use the .zip or .txt option below, or copy the text.');return;
+  }
+  report(r,name);
+}
+$('btnDetail').addEventListener('click',function(){savePDF('detail')});
+$('btnOverview').addEventListener('click',function(){savePDF('overview')});
+$('btnIcs').addEventListener('click',saveICS);
+$('btnShowIcs').addEventListener('click',showIcs);
+$('icsClose').addEventListener('click',function(){$('icsPanel').hidden=true});
+$('icsCopy').addEventListener('click',async function(){
+  var ta=$('icsText');
+  try{await navigator.clipboard.writeText(ta.value);setStatus('Calendar text copied.')}
+  catch(e){ta.focus();ta.select();setStatus('Select the text and copy it with your keyboard.')}
+});
+$('icsTxt').addEventListener('click',async function(){report(await doSave('january-2027-revision-planner.txt',$('icsText').value,'text/plain'),'january-2027-revision-planner.txt')});
+$('icsZip').addEventListener('click',async function(){
+  var z=makeZip('january-2027-revision-planner.ics',new TextEncoder().encode($('icsText').value));
+  report(await doSave('january-2027-revision-planner.zip',z,'application/zip'),'january-2027-revision-planner.zip');
+});
+
+renderStatic();countdown();renderOverview();renderDaily();renderRules();
+try{var t0=sessionStorage.getItem('jan27tab');if(t0&&TABS.indexOf(t0)>-1)showTab(t0)}catch(e){}
+})();
+</script>
+
+</body></html>

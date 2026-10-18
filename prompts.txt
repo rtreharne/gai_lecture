@@ -1,28 +1,51 @@
-Gemini. Panopto Lecture
+PRACTICAL GAI GUIDE — COPYABLE PROMPTS
 
-Act as my interactive and supportive personal tutor for this Panopto lecture. I want to thoroughly understand and consolidate the material we cover.
+These workflows are for study, revision, organisation, careers and coding practice only.
+They are NOT for assessment work. Do not submit AI-generated work as your own.
+Use only material you are allowed to share, and verify important outputs.
 
-Please use this interactive approach:
+The maintained, copyable version is published at prompts.html.
 
-Guide me step-by-step & check for completeness: Walk through the lecture's contents section by section, starting from the beginning. Ask me questions to test my understanding. When I reply, compare my answer directly against the lecture's content—if I leave out key details, specific nuances, or important structural facts, call them out and ask me about them before we move on.
+1. GEMINI — CONSOLIDATE A LECTURE
 
-Be supportive: Give me constructive feedback, nudge me in the right direction when I miss something, and help me build a complete picture.
+I am using this only to study, not for assessment work. Act as a supportive tutor using only my permitted lecture notes below. Ask one retrieval question at a time and wait for my answer. Compare my answer with the notes, identify any missing ideas, give a hint if needed, then ask a fresh question. End by asking me to explain the topic without AI.
 
-Give me the answer when asked: If I get stuck, express confusion, or explicitly ask for the answer (e.g., "Just tell me the answer" or "I don't know, what is it?"), do not quiz me further—immediately provide a clear, direct explanation.
+[PASTE MY OWN NOTES HERE]
 
-Let's start with the first section of the lecture. Kick things off with your first question for me!
+2. GEMINI — MAKE REVISION MATERIALS
 
-PDF prompt
+I am using this only to study, not for assessment work. Using only the permitted notes below, create: 1) a one-page revision guide, 2) 10 flashcards, and 3) five practice questions without answers. Flag anything that is unclear or absent from my notes—do not fill gaps with guesses. After I answer the questions, mark my answers against the notes.
 
-Act as an expert biochemistry professor and study-notes designer. Using the context of the nucleic acid structure [Panopto lecture](https://liverpool.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eb239077-385b-41fa-997f-b4e50095d5e2) (covering Franklin, Chargaff's rules, Watson & Crick, linear vs. circular DNA, eukaryotic vs. bacterial organization, tRNA, and the RNA world hypothesis), generate a comprehensive, two-page study guide formatted in clean Markdown.
+[PASTE MY OWN NOTES HERE]
 
-### Page 1: Detailed Revision Notes
-- Structure this as a high-yield study sheet with clear headings and bullet points.
-- Cover the historical background (X-ray diffraction, Chargaff's rules, Watson & Crick model).
-- Explain DNA and RNA secondary and tertiary structures (including linear vs. circular DNA organization, eukaryotic packaging, and tRNA).
-- Detail the RNA world hypothesis, ribozymes, and why DNA ultimately evolved from RNA.
+3. MICROSOFT COPILOT — REVISION TIMETABLE
 
-### Page 2: Multiple-Choice Questions (MCQs)
-- Provide 5 rigorous multiple-choice questions testing key concepts from the lecture.
-- Each question must include 4 distinct distractors (options A, B, C, D).
-- At the very bottom of Page 2, include an upside-down (flipped) footer containing the correct answer keys. (Use flipped/upside-down Unicode characters so it physically renders upside-down).
+I am using this only to organise my own study, not for assessment work. Build a realistic revision timetable from the dates, priorities and availability below. Schedule short, specific study blocks; include weekly review and catch-up time; do not schedule more than [X] hours per day. Return a weekly table and ask me questions about any missing constraints.
+
+IMPORTANT DATES: [DATES]
+TOPICS + PRIORITY: [TOPICS]
+AVAILABLE TIMES: [TIMES]
+FIXED COMMITMENTS: [COMMITMENTS]
+
+4. MICROSOFT COPILOT — FIND OPPORTUNITIES
+
+Help me find current entry-level bioscience opportunities that match these interests and constraints. For each opportunity, give the role, organisation, location, closing date, official employer link, and the three most important requirements. Mark anything you cannot verify. Do not invent vacancies. Then suggest search terms and one skill I could begin developing.
+
+INTERESTS: [e.g. ecology, microbiology]
+LOCATION: [LOCATION]
+CONSTRAINTS: [e.g. placement / part-time / summer]
+
+5. MICROSOFT COPILOT — TAILOR A CV HONESTLY
+
+Help me tailor an honest CV to this job advert. Use only the experience I state. First make a table with: employer requirement, my direct evidence, partial evidence, and genuine gap. Ask questions where evidence is missing. Then draft concise CV bullets using accurate action verbs. Do not invent skills, results, qualifications or responsibilities.
+
+JOB ADVERT: [PASTE OFFICIAL ADVERT]
+MY REAL EXPERIENCE: [PASTE ONLY TRUE EXPERIENCE]
+
+6. GITHUB CODESPACES + COPILOT — PANTHERIA R EXERCISE
+
+I am using this only to learn R, not for assessment work. Create a new base-R project for this learning exercise. Create pantheria_summary.R and use only base R—do not install packages. Download or use pantheria_234.csv from the supplied backup URL. Read it exactly with data <- read.csv('pantheria_234.csv'). Remove rows where AdultBodyMass_g is -999. Make a summary table by Order with mean, median, minimum, maximum, standard deviation and count. Sort by count descending, print the most frequent Order and its median AdultBodyMass_g rounded to 1 decimal place. Comment the code, run it, show the output, then explain every line and how I can independently check the result.
+
+BACKUP CSV: https://raw.githubusercontent.com/rtreharne/qs/main/data/04/pantheria_234.csv
+
+Verification checkpoint: Rodentia has 338 usable records; its median adult body mass is 143.6 g.

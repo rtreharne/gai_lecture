@@ -1,0 +1,9 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>January 2027 Revision Planner</title></head><body><h1>January 2027 Revision Planner</h1><p>Self-contained planner with print buttons and ICS export.</p><button onclick="window.print()">Print PDF</button><button onclick="downloadICS()">Download Google Calendar (.ics)</button><script>function downloadICS(){const ics=`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Revision Planner//EN
+BEGIN:VEVENT
+SUMMARY:[DEADLINE] BIOS103 Submission
+DTSTART:20270111T110000
+DTEND:20270111T113000
+END:VEVENT
+END:VCALENDAR`;const b=new Blob([ics],{type:'text/calendar'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='January2027RevisionPlanner.ics';a.click();}</script></body></html>

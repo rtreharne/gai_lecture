@@ -1,6 +1,6 @@
-# BIOS105 — AI as a Bioscience Superpower
+# BIOS105 — Practical GAI Guide
 
-Standalone, image-led lecture website for GitHub Pages.
+Standalone, live-demo-led practical guide to generative AI for bioscience students. It contains an eight-slide, 45-minute presentation and a copyable prompt library.
 
 ## Run locally
 
@@ -18,12 +18,26 @@ Arrow keys or Space navigate. `Home` and `End` jump. `F` enters fullscreen. `P` 
 
 ## Placeholders to replace
 
-- `[BIOBOOST_URL]`
-- Any Poll Everywhere links/QR codes added to poll slides
+- Before teaching, select a current official bioscience vacancy for the job-search and CV demonstrations. Capture its URL and key criteria in case it expires during delivery.
+- Use an anonymised fictional first-year student profile for the careers demonstration.
 
 ## GitHub Pages
 
 This is buildless static HTML/CSS/JS. Publish the repository root from the `main` branch using GitHub Pages. No credentials or runtime API keys are required.
+
+The presentation is published at `index.html`; the student take-away is `prompts.html`. Both are relative links, so they work automatically once the repository root is deployed.
+
+## Teaching boundary
+
+The session is for study, revision, organisation, careers and coding practice—not assessment work. The first slide states this prominently, every workflow slide repeats the restriction, and every study prompt begins with it. Students must use only material they are permitted to share and verify important outputs.
+
+## Codespaces demonstration
+
+The final workflow uses the next quantitative-skills R exercise and the GitHub backup CSV. The expected verification point is: **Rodentia**, 338 usable records, median adult body mass **143.6 g**. The demonstration should show Copilot creating and explaining base-R code, then the instructor independently checking the output.
+
+## Presenter preparation
+
+See `DEMO_RUNBOOK.md` for the fictional careers profile, service-failure fallbacks, and the independently verified R output.
 
 ## Attribution
 

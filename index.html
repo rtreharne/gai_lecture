@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#071018" />
-  <meta name="description" content="BIOS105 interactive lecture: AI as a Bioscience Superpower—With You in Charge." />
-  <title>AI as a Bioscience Superpower</title>
+  <meta name="description" content="A practical guide to generative AI for bioscience students." />
+  <title>Practical GAI Guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,18 +16,28 @@
   <main id="deck" aria-live="polite"></main>
   <nav class="controls" aria-label="Presentation controls">
     <button id="prev" aria-label="Previous slide">←</button>
-    <span id="counter">01 / 20</span>
+    <span id="counter">01 / 08</span>
     <button id="next" aria-label="Next slide">→</button>
     <button id="fullscreen" aria-label="Enter fullscreen">⛶</button>
     <button id="overview" aria-label="Show slide overview">▦</button>
   </nav>
   <div id="overviewPanel" class="overview-panel" hidden>
-    <div class="overview-head"><span>BIOS105 / AI SUPERPOWER</span><button id="closeOverview">×</button></div>
+    <div class="overview-head"><span>BIOSCIENCES / PRACTICAL GAI GUIDE</span><button id="closeOverview">×</button></div>
     <div id="overviewGrid" class="overview-grid"></div>
   </div>
   <div id="help" class="help" hidden>
     <strong>Controls</strong><br>← → / Space navigate · Home / End jump · F fullscreen · P overview · Esc close
   </div>
+  <dialog id="promptModal" class="prompt-modal" aria-labelledby="promptModalTitle">
+    <div class="prompt-modal__content">
+      <button id="closePromptModal" class="prompt-modal__close" type="button" aria-label="Close prompt">×</button>
+      <div id="promptModalLabel" class="eyebrow">STUDY PROMPT</div>
+      <h2 id="promptModalTitle">Gemini study prompt</h2>
+      <p id="promptModalIntro" class="prompt-modal__intro">Copy this prompt, then paste it into the relevant tool.</p>
+      <pre id="promptModalText" class="prompt-modal__text"></pre>
+      <button id="copyModalPrompt" class="copy-prompt prompt-modal__copy" type="button">Copy prompt</button>
+    </div>
+  </dialog>
   <script src="js/content.js"></script>
   <script src="js/deck.js"></script>
 </body>
