@@ -2,7 +2,7 @@ const assessmentNotice = "";
 
 const slides = [
   {
-    k: "BIOSCIENCES",
+    k: "SCHOOL OF BIOSCIENCES",
     title: "A Practical Guide to Using<br><span class=\"accent\">GAI For Your Studies.</span>",
     lead: "Dr. Robert Treharne"
   },
@@ -90,6 +90,30 @@ const slides = [
       actionLabel: "Open VS Code snapshot",
       src: "vscode.png",
       alt: "Rob's VS Code workspace with the Calvin bioscience portfolio open alongside the Codex chat."
+    }
+  },
+  {
+    k: "BIOBOOST",
+    title: "BioBoost<br><span class=\"accent\">GAI Foundations</span>",
+    lead: "Optional, but strongly recommended for confident, responsible GAI use.",
+    resources: [
+      ["BioBoost | GAI Foundations", "https://canvas.liverpool.ac.uk/courses/92396/assignments/357249", "Open in Canvas"]
+    ],
+    snapshotModal: {
+      title: "Exclusive badges – only 100 available",
+      intro: "To earn a badge, you need to achieve 100% coverage across all four topics.",
+      actionLabel: "View exclusive badge",
+      src: "pin_badge.png",
+      alt: "A silver BioBoost GAI Foundations metal pin badge on a presentation card."
+    }
+  },
+  {
+    k: "FEEDBACK",
+    className: "feedback-slide",
+    title: "How was this<br><span class=\"accent\">session?</span>",
+    lead: "Your anonymous feedback helps shape future Biosciences teaching.",
+    feedback: {
+      endpoint: "https://script.google.com/macros/s/AKfycbyOOjUEj-gSjVzHb4QfOVWUOtt67uBa_tCxnE200XSm4ev3hld9vgq7dnJNeR5SrFlS/exec"
     }
   }
 ];
