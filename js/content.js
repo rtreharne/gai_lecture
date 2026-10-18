@@ -67,7 +67,7 @@ const slides = [
     title: "Creating an Amazing CV<br><span class=\"coral\">Tailored to a Job Application</span>",
     resources: [
       ["AstraZeneca Pharmaceutical Development Summer Placements", "https://careers.astrazeneca.com/pharmaceutical-development-summer-placements", "Open AstraZeneca placements"],
-      ["Susan Calvin CV — AstraZeneca", "Susan_Calvin_CV_AstraZeneca_QC-1.pdf", "Open tailored CV"]
+      ["Susan Calvin CV — AstraZeneca", "Susan_Calvin_CV_AstraZeneca_QC-1.pdf", "Open tailored CV", true]
     ],
     promptModal: {
       label: "CLAUDE / CV DESIGN PROMPT",
