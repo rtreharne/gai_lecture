@@ -51,7 +51,14 @@ const slides = [
   },
   {
     k: "MICROSOFT COPILOT",
-    title: "Finding Job<br><span class=\"accent\">Opportunities</span>"
+    title: "Finding Job<br><span class=\"accent\">Opportunities</span>",
+    promptModal: {
+      label: "MICROSOFT COPILOT / CAREERS PROMPT",
+      intro: "Attach your CV, then paste this prompt into Microsoft Copilot.",
+      title: "Microsoft Copilot work-experience prompt",
+      actionLabel: "Open Microsoft Copilot work-experience prompt",
+      prompt: "Using my attached CV, search the internet for **Summer 2027 work experience opportunities** suitable for a first-year Biosciences undergraduate at the University of Liverpool.\n\n1. **Location:** Prioritise Liverpool, Merseyside and the wider North West of England.\n2. **Opportunities:** Find paid or unpaid internships, laboratory placements, research experience, conservation work and volunteering opportunities, ideally lasting 1–8 weeks.\n3. **Advertised placements:** Identify at least 15 genuine opportunities suitable for first-year students. Include organisation, location, duration, eligibility, application deadline and a verified application link.\n4. **Speculative opportunities:** Identify at least 10 additional organisations (universities, research laboratories, biotechnology companies, NHS departments, conservation organisations, etc.) that might offer work experience even if they don't advertise placements. Include websites and publicly available contact emails.\n\n**Present results in two clear tables.** Prioritise realistic opportunities, verify links, and distinguish confirmed Summer 2027 placements from potential opportunities. Do not invent information."
+    }
   },
   {
     k: "MICROSOFT COPILOT",
