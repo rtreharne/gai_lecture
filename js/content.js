@@ -17,8 +17,8 @@ const slides = [
     resourceNote: "Open the lecture recording in Google Chrome before using the Gemini prompt.",
     resources: [["BIOS101 · DNA and RNA · K. Hammond", "https://liverpool.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eb239077-385b-41fa-997f-b4e50095d5e2", "Open Panopto recording"]],
     promptModal: {
-      title: "Gemini Panopto Study-Guide Prompt",
-      actionLabel: "Open Gemini Panopto Study-Guide Prompt",
+      title: "Gemini interactive study-companion prompt",
+      actionLabel: "Open Gemini interactive study-companion prompt",
       prompt: "Act as an expert subject-matter professor and study-notes designer. Using the context and content of the lecture titled \"[Insert Lecture Title & Date / Topic Here]\" (focusing on: [Briefly list core topics, key experiments, or concepts covered in the lecture]), generate a comprehensive study guide formatted in clean Markdown.\n\n### Title & Header Requirement\n\n- The very top of the output MUST display a formal title and date matching the lecture: **Lecture Study Guide: [Insert Lecture Title] — [Insert Date]**.\n\n### Part 1: Detailed Revision Notes\n\n- Structure this as a high-yield study sheet with clear headings and bullet points.\n- Cover the foundational background, core principles, and key mechanisms presented in the lecture.\n- Explain structural details, experimental evidence, classifications, and functional significance where applicable.\n- Detail advanced implications, theoretical contexts, or concluding takeaways from the material.\n\n### Part 2: Assessment & Practice Questions\n\n- **Multiple-Choice Questions (MCQs):** Provide 5 rigorous multiple-choice questions testing key concepts. Each must have a single correct option among 4 choices (A, B, C, D).\n- **Multiple-Answer Questions (MAQs):** Provide several multiple-answer questions where more than one option can be correct (clearly indicate that multiple selections apply).\n  - *Strict MAQ Constraints:*\n    - Each MAQ must have **6 to 7 total options** (labeled A through F or G).\n    - Vary the number of correct answers between **2 and 3 correct options** per question.\n    - **Vary the position of correct answers across questions** (e.g., do not cluster correct answers at the top; mix up positions such as A, C, E in one question, B, D, F in another, etc.).\n- **Short Written Answer Questions:** Provide 2 targeted short-answer questions requiring conceptual explanation, mechanism breakdown, or application.\n\n### Part 3: Solutions, Answer Keys, and Model Answers\n\n- Provide clear answer keys for all MCQs and MAQs along with brief, high-yield explanations (explicitly listing all correct options for the MAQs).\n- Provide comprehensive, expert-level model answers for the short written answer questions."
     }
   },
@@ -26,8 +26,8 @@ const slides = [
     k: "GEMINI",
     title: "Preparing<br><span class=\"accent\">Revision Materials</span>",
     promptModal: {
-      title: "Gemini revision-materials prompt",
-      actionLabel: "Open Gemini revision-materials prompt",
+      title: "Gemini Panopto Study-Guide Prompt",
+      actionLabel: "Open Gemini Panopto Study-Guide Prompt",
       prompt: "Act as an expert subject-matter professor and study-notes designer. Using the context of the lecture on [Insert Topic / Paste Lecture Transcript or Summary Here], generate a comprehensive study guide formatted in clean Markdown.\n\n### Part 1: Detailed Revision Notes\n\n- Structure this as a high-yield study sheet with clear headings and bullet points.\n- Cover the foundational background, core principles, and key mechanisms presented in the lecture.\n- Explain structural details, experimental evidence, classifications, and functional significance where applicable.\n- Detail advanced implications, theoretical contexts, or concluding takeaways from the material.\n\n### Part 2: Multiple-Choice Questions (MCQs)\n\n- Provide 5 rigorous multiple-choice questions testing key concepts from the lecture.\n- Each question must include 4 distinct distractors (options A, B, C, D).\n- At the very bottom of Part 2, include a clear, dedicated section for the correct answer keys and brief explanations."
     }
   },
@@ -117,3 +117,7 @@ const slides = [
     }
   }
 ];
+
+const geminiStudyGuidePrompt = slides[2].promptModal.prompt;
+slides[2].promptModal.prompt = "Act as my interactive study companion for the lecture I have open. Lead me through its content as a supportive biosciences tutor.\n\nAsk exactly one question at a time. Start with a straightforward question about an important idea from the lecture, then wait for my answer. After every answer:\n\n1. Say briefly what I got right.\n2. Correct any misunderstanding clearly and kindly.\n3. Add a short explanation, example or memory aid where useful.\n4. Ask one new question that either builds on the same idea or checks a different key concept.\n\nAdapt the difficulty to my responses: begin with recall, then move towards explanation, comparison, application and interpretation of evidence. If I say I do not know, give a concise hint and let me try again before explaining. Do not give a long summary, a batch of questions, or the answer before I have attempted each question. Keep questions focused on the lecture and use accurate scientific terminology.\n\nBegin with the first question only.";
+slides[3].promptModal.prompt = geminiStudyGuidePrompt;
