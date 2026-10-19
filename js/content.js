@@ -113,6 +113,7 @@ const slides = [
   {
     k: "EMPLOYABILITY WEEK",
     className: "events-slide",
+    hideAttendanceCode: true,
     title: "Employability Week<br><span class=\"accent\">Events</span>",
     lead: "Monday 9 November · register for one or both sessions.",
     eventRegistration: {
