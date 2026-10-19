@@ -26,6 +26,7 @@ p, li { font-size: clamp(18px, 2vw, 30px); line-height: 1.25; color: var(--muted
 .source { position: absolute; left: clamp(28px, 6vw, 92px); bottom: 28px; font: 10px var(--mono); color: rgba(244,248,244,.58); max-width: 70%; }
 .title-slide .source { left: clamp(400px, 38vw, 620px); }
 .title-slide h2 sup { font-size: .48em; vertical-align: super; margin-left: .05em; }
+.panopto-placeholder { position: absolute; top: 50%; right: clamp(28px, 6vw, 92px); width: min(43vw, 640px); aspect-ratio: 16 / 9; transform: translateY(-50%); border: 1px solid var(--cyan); border-radius: 14px; background: #151515; box-shadow: 0 18px 50px rgba(0,0,0,.28); }
 .pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; font: 12px var(--mono); color: var(--cyan); margin: 8px 8px 0 0; }
 .timeline { display: flex; gap: 8px; margin-top: 42px; max-width: 1100px; align-items: stretch; }
 .timeline div { flex: 1; border-top: 2px solid var(--cyan); padding-top: 13px; font: 12px var(--mono); color: var(--muted); }
@@ -80,6 +81,7 @@ h2 { font-size: clamp(34px, 4.5vw, 68px); }
 @media (max-width: 700px) {
   .slide { padding: 32px 22px 100px; }
   .source { position: static; margin-top: 24px; max-width: 100%; }
+  .panopto-placeholder { position: relative; top: auto; right: auto; width: 100%; margin-top: 28px; transform: none; }
   .skills-slide h2, .skills-slide .lead { max-width: 100%; }
   .skills-slide .circle-wrap { position: relative; top: auto; right: auto; width: 100%; margin-top: 24px; }
 }

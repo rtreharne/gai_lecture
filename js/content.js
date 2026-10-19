@@ -5,6 +5,7 @@ const slides = [
     k: "SCHOOL OF BIOSCIENCES",
     title: "A Practical Guide to Using<br><span class=\"accent\">GAI<sup aria-hidden=\"true\">*</sup> For Your Studies.</span>",
     lead: "Dr. Robert Treharne",
+    panoptoPlaceholder: true,
     source: "* Generative Artificial Intelligence"
   },
   {
