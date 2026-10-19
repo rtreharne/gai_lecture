@@ -19,9 +19,8 @@ const slides = [
       ["Finding job opportunities", "Microsoft Copilot · opportunity research", 6],
       ["Creating a tailored CV", "Claude · CV redesign", 7],
       ["The future: agentic AI", "VS Code + Codex (GPT-5.6 Terra)", 8],
-      ["Employability Week events", "Google Apps Script · event registration", 9],
-      ["BioBoost GAI Foundations", "Canvas · confidence and responsible use", 10],
-      ["Feedback", "Anonymous Google form", 11]
+      ["Employability Week events", "Opportunities for AI Skills training", 9],
+      ["BioBoost GAI Foundations", "Canvas · confidence and responsible use", 10]
     ]
   },
   {
