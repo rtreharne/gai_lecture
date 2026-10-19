@@ -156,7 +156,7 @@ const slides = [
       ["Build, publish and connect", "Codex built and refined the HTML, CSS and JavaScript, prepared GitHub Pages deployment, added Canvas pages and helped connect Google Apps Script and Sheets."],
       ["Iterate, test, improve", "This was built through small, checkable changes: Rob reviewed the results, requested refinements and chose when each update was ready to publish."]
     ],
-    check: "The aim is to use AI to speed up making and improving a resource, while keeping people in control of the teaching."
+    check: "Developed iteratively across 18–19 October 2026. Without AI assistance, the drafting, coding, testing and integration work would have taken Rob substantially longer."
   }
 ];
 
