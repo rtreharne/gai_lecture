@@ -149,14 +149,14 @@ const slides = [
     className: "creation-slide",
     hideAttendanceCode: true,
     title: "How This Resource<br><span class=\"accent\">Was Created</span>",
-    lead: "A practical collaboration between Dr Robert Treharne and Codex, an AI coding assistant.",
+    lead: "A practical collaboration between Rob and Codex, an AI coding assistant.",
     grid: [
-      ["Planning and writing", "I helped turn your ideas into slide text, study prompts, example activities and student-facing guidance. You chose the aims, audience, examples and final wording."],
+      ["Planning and writing", "I helped turn Rob’s ideas into slide text, study prompts, example activities and student-facing guidance. Rob chose the aims, audience, examples and final wording."],
       ["Design and interaction", "I built and refined the HTML, CSS and JavaScript: prompt modals, the revision planner link, slide navigation, attendance display, feedback and event-registration forms."],
-      ["Publishing and connections", "At your direction, I prepared GitHub Pages deployment, added Canvas pages and links, and helped connect Google Apps Script and Sheets for feedback and registrations."],
-      ["Honest limits", "AI can draft, code and suggest, but it can be wrong. You remain responsible for checking accuracy, accessibility, student data, permissions and whether every resource is appropriate to use."]
+      ["Publishing and connections", "At Rob’s direction, I prepared GitHub Pages deployment, added Canvas pages and links, and helped connect Google Apps Script and Sheets for feedback and registrations."],
+      ["Iterate, test, improve", "This was built through small, checkable changes: Rob reviewed the results, requested refinements and chose when each update was ready to publish."]
     ],
-    check: "This is an AI-assisted teaching resource, not an autonomous one: the teaching decisions, approvals and accountability remain human."
+    check: "The aim is to use AI to speed up making and improving a resource, while keeping people in control of the teaching."
   }
 ];
 
