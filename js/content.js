@@ -19,8 +19,9 @@ const slides = [
       ["Finding job opportunities", "Microsoft Copilot · opportunity research", 6],
       ["Creating a tailored CV", "Claude · CV redesign", 7],
       ["The future: agentic AI", "VS Code + Codex (GPT-5.6 Terra)", 8],
-      ["BioBoost GAI Foundations", "Canvas · confidence and responsible use", 9],
-      ["Feedback", "Anonymous Google form", 10]
+      ["Employability Week events", "Google Apps Script · event registration", 9],
+      ["BioBoost GAI Foundations", "Canvas · confidence and responsible use", 10],
+      ["Feedback", "Anonymous Google form", 11]
     ]
   },
   {
@@ -107,6 +108,15 @@ const slides = [
       actionLabel: "Open VS Code snapshot",
       src: "vscode.png",
       alt: "Rob's VS Code workspace with the Calvin bioscience portfolio open alongside the Codex chat."
+    }
+  },
+  {
+    k: "EMPLOYABILITY WEEK",
+    className: "events-slide",
+    title: "Employability Week<br><span class=\"accent\">Events</span>",
+    lead: "Monday 9 November · register for one or both sessions.",
+    eventRegistration: {
+      endpoint: "https://script.google.com/macros/s/AKfycbyOOjUEj-gSjVzHb4QfOVWUOtt67uBa_tCxnE200XSm4ev3hld9vgq7dnJNeR5SrFlS/exec"
     }
   },
   {

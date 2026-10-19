@@ -40,7 +40,8 @@
     const attendanceForm = i === 0 ? `<form class="attendance-form" data-attendance-form><label for="attendanceCode">Attendance code</label><input id="attendanceCode" name="attendanceCode" value="${esc(attendanceCode)}" autocomplete="off" required placeholder="Enter code, then press Enter" /><p class="attendance-status" data-attendance-status aria-live="polite"></p></form>` : '';
     const attendanceMarker = i > 0 && i < slides.length - 1 ? `<div class="attendance-marker${attendanceCode ? ' is-visible' : ''}" data-attendance-marker>Attendance code: <strong>${esc(attendanceCode)}</strong></div>` : '';
     const feedback = s.feedback ? `<form class="feedback-form" data-feedback-form action="${esc(s.feedback.endpoint)}" method="post" target="feedback-target-${i}"><fieldset><legend>Overall, how would you rate this session?</legend><div class="likert-scale"><label><input type="radio" name="rating" value="1" required><span>1</span><small>Very poor</small></label><label><input type="radio" name="rating" value="2"><span>2</span><small>Poor</small></label><label><input type="radio" name="rating" value="3"><span>3</span><small>Okay</small></label><label><input type="radio" name="rating" value="4"><span>4</span><small>Good</small></label><label><input type="radio" name="rating" value="5"><span>5</span><small>Excellent</small></label></div></fieldset><label class="feedback-comment" for="feedback-comment-${i}">Optional comment <span>What should we keep, change or explore next?</span></label><textarea id="feedback-comment-${i}" name="comment" maxlength="2000" placeholder="Share a thought…"></textarea><div class="feedback-honeypot" aria-hidden="true"><label for="website-${i}">Website</label><input id="website-${i}" name="website" type="text" tabindex="-1" autocomplete="off"></div><button class="feedback-submit" type="submit">Send anonymous feedback <span aria-hidden="true">→</span></button><p class="feedback-status" data-feedback-status aria-live="polite"></p></form><iframe name="feedback-target-${i}" title="Feedback submission" class="feedback-target" tabindex="-1"></iframe>` : '';
-    return `<section class="slide ${i === 0 ? 'title-slide' : ''} ${s.className || ''} ${i === current ? 'active' : ''}" data-index="${i}" data-number="${String(i + 1).padStart(2, '0')}"><div class="eyebrow">${s.k}${s.time ? ` <span class="time">${s.time}</span>` : ''}</div>${studyOnly}<h2>${s.title}</h2>${s.lead ? `<p class="lead">${s.lead}</p>` : ''}${disclaimer}${resources}${cards}${diagram}${prompt}${checklist}${check}${linkList(s.links)}${resource}${feedback}${attendanceForm}${attendanceMarker}${s.source ? `<div class="source">${s.source}</div>` : ''}</section>`;
+    const eventRegistration = s.eventRegistration ? `<form class="event-registration" data-event-registration action="${esc(s.eventRegistration.endpoint)}" method="post" target="event-registration-target-${i}"><input type="hidden" name="rating" value="5"><input type="hidden" name="comment" data-registration-comment><fieldset><legend>Choose your session(s)</legend><label class="event-choice"><input type="checkbox" name="event" value="Making a personal website with AI — Monday 9 November, 11:00–13:00"><span><strong>Making a personal website with AI</strong><small>11:00–13:00 · Location to be confirmed</small><em>Turn your ideas and experience into a clear personal website with AI support.</em></span></label><label class="event-choice"><input type="checkbox" name="event" value="Analyse your data using AI — Monday 9 November, 14:00–16:00"><span><strong>Analyse your data using AI</strong><small>14:00–16:00 · Location to be confirmed</small><em>Explore how AI can help you examine, visualise and communicate data responsibly.</em></span></label></fieldset><div class="registration-details"><label for="registration-name-${i}">Your name<input id="registration-name-${i}" name="name" autocomplete="name" required></label><label for="registration-email-${i}">University email<input id="registration-email-${i}" name="email" type="email" autocomplete="email" required></label></div><p class="registration-note">Your details will be used only to organise these events.</p><div class="feedback-honeypot" aria-hidden="true"><label for="registration-website-${i}">Website</label><input id="registration-website-${i}" name="website" type="text" tabindex="-1" autocomplete="off"></div><button class="feedback-submit" type="submit">Register for selected event(s) <span aria-hidden="true">→</span></button><p class="feedback-status" data-event-registration-status aria-live="polite"></p></form><iframe name="event-registration-target-${i}" title="Event registration submission" class="feedback-target" tabindex="-1"></iframe>` : '';
+    return `<section class="slide ${i === 0 ? 'title-slide' : ''} ${s.className || ''} ${i === current ? 'active' : ''}" data-index="${i}" data-number="${String(i + 1).padStart(2, '0')}"><div class="eyebrow">${s.k}${s.time ? ` <span class="time">${s.time}</span>` : ''}</div>${studyOnly}<h2>${s.title}</h2>${s.lead ? `<p class="lead">${s.lead}</p>` : ''}${disclaimer}${resources}${cards}${diagram}${prompt}${checklist}${check}${linkList(s.links)}${resource}${eventRegistration}${feedback}${attendanceForm}${attendanceMarker}${s.source ? `<div class="source">${s.source}</div>` : ''}</section>`;
   }
   function copyText(button) {
     const value = button.dataset.copy;
@@ -108,7 +109,36 @@
       });
     });
   }
-  function render() { root.innerHTML = slides.map(slideHTML).join(''); root.querySelectorAll('.copy-prompt').forEach(button => button.addEventListener('click', () => copyText(button))); root.querySelectorAll('[data-prompt-title]').forEach(button => button.addEventListener('click', () => openPromptModal(button))); root.querySelectorAll('[data-snapshot-title]').forEach(button => button.addEventListener('click', () => openSnapshotModal(button))); root.querySelectorAll('.card-link').forEach(card => card.addEventListener('click', () => go(Number(card.dataset.goto)))); setupAttendanceForm(); setupFeedbackForms(); update(); buildOverview(); }
+  function setupEventRegistrationForms() {
+    root.querySelectorAll('[data-event-registration]').forEach(form => {
+      const status = form.querySelector('[data-event-registration-status]');
+      const submit = form.querySelector('button[type="submit"]');
+      const choices = [...form.querySelectorAll('input[name="event"]')];
+      const target = document.querySelector(`iframe[name="${form.target}"]`);
+      let submitting = false;
+      target?.addEventListener('load', () => {
+        if (!submitting) return;
+        submitting = false;
+        submit.disabled = false;
+        form.reset();
+        status.textContent = 'Thanks — your event registration has been sent.';
+      });
+      form.addEventListener('submit', event => {
+        const selected = choices.filter(choice => choice.checked).map(choice => choice.value);
+        if (!selected.length) {
+          event.preventDefault();
+          status.textContent = 'Please choose at least one event.';
+          choices[0].focus();
+          return;
+        }
+        form.querySelector('[data-registration-comment]').value = `[EMPLOYABILITY WEEK REGISTRATION]\nName: ${form.elements['name'].value.trim()}\nEmail: ${form.elements['email'].value.trim()}\nEvents: ${selected.join('; ')}`;
+        submitting = true;
+        submit.disabled = true;
+        status.textContent = 'Sending your registration…';
+      });
+    });
+  }
+  function render() { root.innerHTML = slides.map(slideHTML).join(''); root.querySelectorAll('.copy-prompt').forEach(button => button.addEventListener('click', () => copyText(button))); root.querySelectorAll('[data-prompt-title]').forEach(button => button.addEventListener('click', () => openPromptModal(button))); root.querySelectorAll('[data-snapshot-title]').forEach(button => button.addEventListener('click', () => openSnapshotModal(button))); root.querySelectorAll('.card-link').forEach(card => card.addEventListener('click', () => go(Number(card.dataset.goto)))); setupAttendanceForm(); setupFeedbackForms(); setupEventRegistrationForms(); update(); buildOverview(); }
   function update() { document.querySelectorAll('.slide').forEach((el, i) => el.classList.toggle('active', i === current)); counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`; history.replaceState(null, '', `#${current + 1}`); openInNewTab.href = `${location.origin}${location.pathname}#${current + 1}`; }
   function go(n) { current = Math.max(0, Math.min(slides.length - 1, n)); update(); }
   function buildOverview() { overviewGrid.innerHTML = slides.map((s, i) => `<div class="thumb" data-goto="${i}"><b>${String(i + 1).padStart(2, '0')} / ${s.k}</b><span>${s.title.replace(/<[^>]+>/g, '')}</span></div>`).join(''); overviewGrid.querySelectorAll('.thumb').forEach(x => x.addEventListener('click', () => { go(Number(x.dataset.goto)); overviewPanel.hidden = true; })); }
