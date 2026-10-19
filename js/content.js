@@ -33,7 +33,7 @@ const slides = [
   {
     k: "GEMINI",
     title: "Consolidating Knowledge<br>and Testing <span class=\"cyan\">Understanding</span>",
-    resourceNote: "Open the lecture recording in Google Chrome before using the Gemini prompt.",
+    resourceNote: "Watch the lecture independently, then use this prompt only with notes you are permitted to share.",
     resources: [["BIOS101 · DNA and RNA · K. Hammond", "https://liverpool.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eb239077-385b-41fa-997f-b4e50095d5e2", "Open Panopto recording"]],
     promptModal: {
       title: "Gemini interactive study-companion prompt",
@@ -166,3 +166,6 @@ const slides = [
 const geminiStudyGuidePrompt = slides[3].promptModal.prompt;
 slides[3].promptModal.prompt = "Act as my interactive study companion for the lecture I have open. Lead me through its content as a supportive biosciences tutor.\n\nAsk exactly one question at a time. Start with a straightforward question about an important idea from the lecture, then wait for my answer. After every answer:\n\n1. Say briefly what I got right.\n2. Correct any misunderstanding clearly and kindly.\n3. Add a short explanation, example or memory aid where useful.\n4. Ask one new question that either builds on the same idea or checks a different key concept.\n\nAdapt the difficulty to my responses: begin with recall, then move towards explanation, comparison, application and interpretation of evidence. If I say I do not know, give a concise hint and let me try again before explaining. Do not give a long summary, a batch of questions, or the answer before I have attempted each question. Keep questions focused on the lecture and use accurate scientific terminology.\n\nBegin with the first question only.";
 slides[4].promptModal.prompt = geminiStudyGuidePrompt;
+
+slides[3].promptModal.policyNotice = true;
+slides[3].promptModal.prompt = "I am using this for private study, not assessment work. Use only the notes I upload or paste below. Do not infer, retrieve or fill gaps from a lecture recording, transcript, slides or other protected teaching material.\n\nAct as my interactive study companion and supportive biosciences tutor. Using only my notes, ask exactly one active-recall question at a time and wait for my answer. After each answer, briefly say what I got right, correct any misunderstanding clearly, add a short explanation or hint where useful, then ask one new question. Flag anything that is unclear or absent from my notes rather than guessing.\n\n### My notes\n\n[UPLOAD OR PASTE NOTES I AM PERMITTED TO SHARE HERE]";

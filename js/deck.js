@@ -10,6 +10,7 @@
   const promptModalTitle = document.getElementById('promptModalTitle');
   const promptModalIntro = document.getElementById('promptModalIntro');
   const promptModalText = document.getElementById('promptModalText');
+  const promptModalPolicyNotice = document.getElementById('promptModalPolicyNotice');
   const copyModalPrompt = document.getElementById('copyModalPrompt');
   const closePromptModal = document.getElementById('closePromptModal');
   const snapshotModal = document.getElementById('snapshotModal');
@@ -33,7 +34,7 @@
   const copyButton = prompt => `<button class="copy-prompt" type="button" data-copy="${esc(prompt)}">Copy prompt</button>`;
   const linkList = links => links ? `<div class="resource-links">${links.map(([label, href]) => `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(label)} <span aria-hidden="true">↗</span></a>`).join('')}</div>` : '';
   function slideHTML(s, i) {
-    const promptAction = s.promptModal ? `<button class="resource-prompt" type="button" data-prompt-label="${esc(s.promptModal.label || `${s.k} / STUDY PROMPT`)}" data-prompt-title="${esc(s.promptModal.title)}" data-prompt-intro="${esc(s.promptModal.intro || 'Copy this prompt, then paste it into the relevant tool.')}" data-prompt="${esc(s.promptModal.prompt)}">${esc(s.promptModal.actionLabel || 'Open prompt')} <span aria-hidden="true">→</span></button>` : '';
+    const promptAction = s.promptModal ? `<button class="resource-prompt" type="button" data-prompt-label="${esc(s.promptModal.label || `${s.k} / STUDY PROMPT`)}" data-prompt-title="${esc(s.promptModal.title)}" data-prompt-intro="${esc(s.promptModal.intro || 'Copy this prompt, then paste it into the relevant tool.')}" data-prompt="${esc(s.promptModal.prompt)}" data-policy-notice="${s.promptModal.policyNotice ? 'true' : 'false'}">${esc(s.promptModal.actionLabel || 'Open prompt')} <span aria-hidden="true">→</span></button>` : '';
     const snapshotAction = s.snapshotModal ? `<button class="resource-prompt" type="button" data-snapshot-title="${esc(s.snapshotModal.title)}" data-snapshot-intro="${esc(s.snapshotModal.intro || '')}" data-snapshot-src="${esc(s.snapshotModal.src)}" data-snapshot-alt="${esc(s.snapshotModal.alt)}">${esc(s.snapshotModal.actionLabel)} <span aria-hidden="true">→</span></button>` : '';
     const cards = s.grid ? `<div class="grid ${s.grid.length > 2 ? 'three' : ''}">${s.grid.map(c => c[2] === undefined ? `<div class="card"><strong>${c[0]}</strong><p>${c[1]}</p></div>` : `<button class="card card-link" type="button" data-goto="${c[2]}" aria-label="Go to ${esc(c[0])}"><strong>${c[0]}</strong><p>${c[1]}</p><span aria-hidden="true">→</span></button>`).join('')}</div>` : '';
     const renderResourceLink = ([label, href, action = 'Open resource']) => `<a href="${esc(href)}" target="_blank" rel="noopener" aria-label="Open ${esc(label)} in a new tab"><span>${esc(label)}</span><em>${esc(action)} <b aria-hidden="true">↗</b></em></a>`;
@@ -65,6 +66,7 @@
     promptModalTitle.textContent = button.dataset.promptTitle;
     promptModalIntro.textContent = button.dataset.promptIntro;
     promptModalText.textContent = button.dataset.prompt;
+    promptModalPolicyNotice.hidden = button.dataset.policyNotice !== 'true';
     copyModalPrompt.dataset.copy = button.dataset.prompt;
     promptModal.showModal();
     closePromptModal.focus();
