@@ -12,15 +12,15 @@ const slides = [
     title: "What we’ll<br><span class=\"accent\">explore.</span>",
     lead: "Practical examples of GAI tools for learning, planning and career development.",
     grid: [
-      ["Using GAI in assessments", "All tools · guidance first"],
-      ["Consolidating knowledge", "Gemini · interactive study companion"],
-      ["Preparing revision materials", "Gemini · study guides and practice"],
-      ["Organising a revision timetable", "Claude · planner artifact"],
-      ["Finding job opportunities", "Microsoft Copilot · opportunity research"],
-      ["Creating a tailored CV", "Claude · CV redesign"],
-      ["The future: agentic AI", "VS Code + Codex (GPT-5.6 Terra)"],
-      ["BioBoost GAI Foundations", "Canvas · confidence and responsible use"],
-      ["Feedback", "Anonymous Google form"]
+      ["Using GAI in assessments", "All tools · guidance first", 2],
+      ["Consolidating knowledge", "Gemini · interactive study companion", 3],
+      ["Preparing revision materials", "Gemini · study guides and practice", 4],
+      ["Organising a revision timetable", "Claude · planner artifact", 5],
+      ["Finding job opportunities", "Microsoft Copilot · opportunity research", 6],
+      ["Creating a tailored CV", "Claude · CV redesign", 7],
+      ["The future: agentic AI", "VS Code + Codex (GPT-5.6 Terra)", 8],
+      ["BioBoost GAI Foundations", "Canvas · confidence and responsible use", 9],
+      ["Feedback", "Anonymous Google form", 10]
     ]
   },
   {
