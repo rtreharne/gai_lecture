@@ -7,6 +7,23 @@ const slides = [
     lead: "Dr. Robert Treharne"
   },
   {
+    k: "CONTENTS",
+    className: "contents-slide",
+    title: "What we’ll<br><span class=\"accent\">explore.</span>",
+    lead: "Practical examples of GAI tools for learning, planning and career development.",
+    grid: [
+      ["Using GAI in assessments", "All tools · guidance first"],
+      ["Consolidating knowledge", "Gemini · interactive study companion"],
+      ["Preparing revision materials", "Gemini · study guides and practice"],
+      ["Organising a revision timetable", "Claude · planner artifact"],
+      ["Finding job opportunities", "Microsoft Copilot · opportunity research"],
+      ["Creating a tailored CV", "Claude · CV redesign"],
+      ["The future: agentic AI", "VS Code + Codex (GPT-5.6 Terra)"],
+      ["BioBoost GAI Foundations", "Canvas · confidence and responsible use"],
+      ["Feedback", "Anonymous Google form"]
+    ]
+  },
+  {
     k: "DISCLAIMER",
     title: "Using GAI in<br><span class=\"coral\">assessments.</span>",
     lead: "The demo GAI use in this lecture is for illustration and learning. It is not permission to use GAI in assessment work.<br><br>You must refer to the guidance provided with each assessment and follow its instructions carefully if you use GAI."
@@ -79,7 +96,7 @@ const slides = [
     }
   },
   {
-    k: "GITHUB CODESPACES + COPILOT",
+    k: "VS CODE + CODEX (GPT-5.6 TERRA)",
     title: "The Future:<br><span class=\"accent\">Agentic AI</span>",
     resources: [
       ["Make a personal website with AI", "https://hi-py.uk/resources/personal-website-with-ai/", "Open resource"],
@@ -118,6 +135,6 @@ const slides = [
   }
 ];
 
-const geminiStudyGuidePrompt = slides[2].promptModal.prompt;
-slides[2].promptModal.prompt = "Act as my interactive study companion for the lecture I have open. Lead me through its content as a supportive biosciences tutor.\n\nAsk exactly one question at a time. Start with a straightforward question about an important idea from the lecture, then wait for my answer. After every answer:\n\n1. Say briefly what I got right.\n2. Correct any misunderstanding clearly and kindly.\n3. Add a short explanation, example or memory aid where useful.\n4. Ask one new question that either builds on the same idea or checks a different key concept.\n\nAdapt the difficulty to my responses: begin with recall, then move towards explanation, comparison, application and interpretation of evidence. If I say I do not know, give a concise hint and let me try again before explaining. Do not give a long summary, a batch of questions, or the answer before I have attempted each question. Keep questions focused on the lecture and use accurate scientific terminology.\n\nBegin with the first question only.";
-slides[3].promptModal.prompt = geminiStudyGuidePrompt;
+const geminiStudyGuidePrompt = slides[3].promptModal.prompt;
+slides[3].promptModal.prompt = "Act as my interactive study companion for the lecture I have open. Lead me through its content as a supportive biosciences tutor.\n\nAsk exactly one question at a time. Start with a straightforward question about an important idea from the lecture, then wait for my answer. After every answer:\n\n1. Say briefly what I got right.\n2. Correct any misunderstanding clearly and kindly.\n3. Add a short explanation, example or memory aid where useful.\n4. Ask one new question that either builds on the same idea or checks a different key concept.\n\nAdapt the difficulty to my responses: begin with recall, then move towards explanation, comparison, application and interpretation of evidence. If I say I do not know, give a concise hint and let me try again before explaining. Do not give a long summary, a batch of questions, or the answer before I have attempted each question. Keep questions focused on the lecture and use accurate scientific terminology.\n\nBegin with the first question only.";
+slides[4].promptModal.prompt = geminiStudyGuidePrompt;
