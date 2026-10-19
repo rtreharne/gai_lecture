@@ -149,15 +149,15 @@ const slides = [
     className: "creation-slide",
     hideAttendanceCode: true,
     title: "How This Resource<br><span class=\"accent\">Was Created</span>",
-    lead: "A practical collaboration between Rob and Codex in VS Code, predominantly using GPT-5.6 Terra at Medium reasoning effort.",
+    lead: "I created this with Codex in VS Code, predominantly using GPT-5.6 Terra at Medium reasoning effort.",
     grid: [
-      ["Working in VS Code", "Rob used Codex, an AI coding agent in VS Code. Codex can inspect project files, suggest or make scoped code changes, run checks and help manage development tasks."],
-      ["Planning and writing", "Codex helped turn Rob’s ideas into slide text, study prompts, example activities and student-facing guidance. Rob chose the aims, audience, examples and final wording."],
+      ["Working in VS Code", "I used Codex, an AI coding agent in VS Code. It can inspect project files, suggest or make scoped code changes, run checks and help manage development tasks."],
+      ["Planning and writing", "Codex helped turn my ideas into slide text, study prompts, example activities and student-facing guidance. I chose the aims, audience, examples and final wording."],
       ["Build, publish and connect", "Codex built and refined the HTML, CSS and JavaScript, prepared GitHub Pages deployment, added Canvas pages and helped connect Google Apps Script and Sheets."],
-      ["Iterate, test, improve", "This was built through small, checkable changes: Rob reviewed the results, requested refinements and chose when each update was ready to publish."]
+      ["Iterate, test, improve", "This was built through small, checkable changes: I reviewed the results, requested refinements and chose when each update was ready to publish."]
     ],
     checkTitle: "Time saved",
-    check: "Developed iteratively across 18–19 October 2026. Without AI assistance, the drafting, coding, testing and integration work would have taken Rob substantially longer."
+    check: "Developed iteratively across 18–19 October 2026. Without AI assistance, the drafting, coding, testing and integration work would have taken me substantially longer."
   }
 ];
 
