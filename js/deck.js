@@ -33,7 +33,7 @@
     const diagram = s.diagram ? `<div class="diagram">${s.diagram.map((x, j) => `<span class="node">${x}</span>${j < s.diagram.length - 1 ? '<span class="arrow">→</span>' : ''}`).join('')}</div>` : '';
     const prompt = s.prompt ? `<div class="prompt-wrap"><blockquote class="demo-prompt">${esc(s.prompt)}</blockquote>${copyButton(s.prompt)}</div>` : '';
     const checklist = s.checklist ? `<ol class="demo-checklist">${s.checklist.map(item => `<li>${esc(item)}</li>`).join('')}</ol>` : '';
-    const check = s.check ? `<aside class="human-check"><strong>You still do this</strong><p>${esc(s.check)}</p></aside>` : '';
+    const check = s.check ? `<aside class="human-check"><strong>${esc(s.checkTitle || 'You still do this')}</strong><p>${esc(s.check)}</p></aside>` : '';
     const disclaimer = s.disclaimer ? `<aside class="disclaimer"><strong>IMPORTANT</strong><p>${esc(s.disclaimer)}</p></aside>` : '';
     const studyOnly = s.studyOnly ? `<div class="study-only">${assessmentNotice}</div>` : '';
     const resource = s.resource ? `<a class="library-link" href="${esc(s.resource.href)}">${esc(s.resource.label)} <span aria-hidden="true">→</span></a>` : '';
