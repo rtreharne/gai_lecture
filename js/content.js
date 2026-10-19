@@ -149,11 +149,11 @@ const slides = [
     className: "creation-slide",
     hideAttendanceCode: true,
     title: "How This Resource<br><span class=\"accent\">Was Created</span>",
-    lead: "A practical collaboration between Rob and Codex, an AI coding assistant.",
+    lead: "A practical collaboration between Rob and Codex in VS Code, predominantly using GPT-5.6 Terra at Medium reasoning effort.",
     grid: [
-      ["Planning and writing", "I helped turn Rob’s ideas into slide text, study prompts, example activities and student-facing guidance. Rob chose the aims, audience, examples and final wording."],
-      ["Design and interaction", "I built and refined the HTML, CSS and JavaScript: prompt modals, the revision planner link, slide navigation, attendance display, feedback and event-registration forms."],
-      ["Publishing and connections", "At Rob’s direction, I prepared GitHub Pages deployment, added Canvas pages and links, and helped connect Google Apps Script and Sheets for feedback and registrations."],
+      ["Working in VS Code", "Rob used Codex, an AI coding agent in VS Code. Codex can inspect project files, suggest or make scoped code changes, run checks and help manage development tasks."],
+      ["Planning and writing", "Codex helped turn Rob’s ideas into slide text, study prompts, example activities and student-facing guidance. Rob chose the aims, audience, examples and final wording."],
+      ["Build, publish and connect", "Codex built and refined the HTML, CSS and JavaScript, prepared GitHub Pages deployment, added Canvas pages and helped connect Google Apps Script and Sheets."],
       ["Iterate, test, improve", "This was built through small, checkable changes: Rob reviewed the results, requested refinements and chose when each update was ready to publish."]
     ],
     check: "The aim is to use AI to speed up making and improving a resource, while keeping people in control of the teaching."
