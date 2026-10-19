@@ -2,6 +2,7 @@
   const root = document.getElementById('deck');
   const counter = document.getElementById('counter');
   const openInNewTab = document.getElementById('openInNewTab');
+  const highContrast = document.getElementById('highContrast');
   const overviewPanel = document.getElementById('overviewPanel');
   const overviewGrid = document.getElementById('overviewGrid');
   const promptModal = document.getElementById('promptModal');
@@ -19,6 +20,15 @@
   let modalTrigger;
   let attendanceCode = sessionStorage.getItem('gai-attendance-code') || '';
   let current = Math.max(0, Math.min(slides.length - 1, (Number(location.hash.slice(1)) || 1) - 1));
+  function setHighContrast(enabled) {
+    document.body.classList.toggle('high-contrast', enabled);
+    highContrast.setAttribute('aria-pressed', String(enabled));
+    highContrast.setAttribute('aria-label', `${enabled ? 'Disable' : 'Enable'} high contrast`);
+    highContrast.title = `${enabled ? 'Disable' : 'Enable'} high contrast`;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', enabled ? '#000000' : '#071018');
+    try { sessionStorage.setItem('gai-high-contrast', String(enabled)); } catch { /* Storage may be unavailable. */ }
+  }
+  try { setHighContrast(sessionStorage.getItem('gai-high-contrast') === 'true'); } catch { setHighContrast(false); }
   const esc = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
   const copyButton = prompt => `<button class="copy-prompt" type="button" data-copy="${esc(prompt)}">Copy prompt</button>`;
   const linkList = links => links ? `<div class="resource-links">${links.map(([label, href]) => `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(label)} <span aria-hidden="true">↗</span></a>`).join('')}</div>` : '';
@@ -143,6 +153,7 @@
   function go(n) { current = Math.max(0, Math.min(slides.length - 1, n)); update(); }
   function buildOverview() { overviewGrid.innerHTML = slides.map((s, i) => { const title = s.title.replace(/<br\s*\/?\s*>/gi, ' ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(); return `<div class="thumb" data-goto="${i}"><b>${String(i + 1).padStart(2, '0')} / ${s.k}</b><span>${title}</span></div>`; }).join(''); overviewGrid.querySelectorAll('.thumb').forEach(x => x.addEventListener('click', () => { go(Number(x.dataset.goto)); overviewPanel.hidden = true; })); }
   document.getElementById('next').onclick = () => go(current + 1); document.getElementById('prev').onclick = () => go(current - 1); document.getElementById('overview').onclick = () => overviewPanel.hidden = false; document.getElementById('closeOverview').onclick = () => overviewPanel.hidden = true; document.getElementById('fullscreen').onclick = () => document.documentElement.requestFullscreen?.();
+  highContrast.addEventListener('click', () => setHighContrast(!document.body.classList.contains('high-contrast')));
   copyModalPrompt.addEventListener('click', () => copyText(copyModalPrompt));
   closePromptModal.addEventListener('click', () => promptModal.close());
   promptModal.addEventListener('click', event => { if (event.target === promptModal) promptModal.close(); });
