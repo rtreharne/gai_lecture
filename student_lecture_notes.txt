@@ -1,0 +1,162 @@
+last lecture = evidence DNA is genetic material, DNA/RNA nucleotides + linking them into chains. primary structure basically sequence.
+today secondary + tertiary structure, packaging, then RNA / origins of life
+
+DNA double helix discovery - not just Watson + Crick!!
+Franklin, Wilkins, Raymond Gosling did X ray work. Gosling PhD student often forgotten.
+W+C built model using other people's experimental evidence + chemistry
+Hershey/Chase = DNA hereditary material, NOT helix structure
+Meselson/Stahl = replication, coming later
+Wilkins got Nobel with W+C. Franklin had died by then.
+
+X ray diffraction - DNA fibres with strands aligned, otherwise pattern would be a mess
+fire X rays at fibre, diffraction pattern depends on structure
+photo 51
+showed helix, 2 strands, phosphates outside
+width 2nm. repeats 0.34nm and 3.4nm - need know what these mean
+Pauling model had 3 strands + phosphates inside so didn't fit evidence
+
+Chargaff rules - measured bases in DNA from lots of organisms incl mammals + E coli
+A amount = T amount
+G = C
+suggests pairing! proportions vary between species but these relationships hold
+
+methylcytosine = C with methyl group attached
+some C methylated in eukaryotes. epigenetic marker, can repress gene expression / switch genes off
+count methyl C as well when doing base percentages
+G = C + methyl C, not just ordinary C
+
+Kahoot example A 28% so T 28%
+G was 22% NOT 20 - need add methylcytosine!!
+remember this trap
+
+W+C had metal base models made at Cavendish, physically tried fitting them together
+model had to fit diffraction + Chargaff
+A pairs T, 2 hydrogen bonds
+G pairs C, 3 hydrogen bonds
+GC pairing more stable - GC rich DNA needs higher temp to denature than AT rich
+relevant later for lab techniques
+
+helix dimensions again
+2nm across whole double helix
+0.34nm between adjacent base pairs
+3.4nm for one full turn, approx 10 base pairs per turn
+major groove big gap, minor groove smaller gap
+sugar phosphate backbones outside, bases inside
+1953 paper W+C - structure has 'considerable biological interest' - understatement!
+structure also suggests way DNA can replicate. next lecture
+
+books mentioned - The Double Helix by Watson (his perspective so biased)
+The Dark Lady of DNA - Franklin biography. optional reading
+video audio didn't work, can watch afterwards
+
+complementarity = knowing one strand lets you work out other
+A-T C-G always
+strands have direction. 5 prime phosphate end, 3 prime hydroxyl end
+ANTIPARALLEL - one runs 5' to 3', other 3' to 5'
+important for replication
+sometimes only one DNA strand sequence written because can infer other one
+
+DNA usually double stranded
+linear chromosomes in eukaryotes. have ends - ends awkward to replicate
+bacterial chromosome generally circular
+also plasmids = small extra DNA circles, can carry antibiotic resistance, transfer between bacteria
+useful in biotech
+some DNA viruses single stranded, exception
+
+amount of DNA varies massively
+viruses approx 5,000 to 200,000 bp examples in lecture
+E coli approx 4.3 million bp
+human haploid genome 3 billion bp, diploid 6 billion
+roughly 2 metres DNA per human cell - fits in tiny space
+if helix was 1mm wide instead of 2nm, would stretch 1000km!
+figures to illustrate scale, don't need memorise all genome sizes
+
+packaging needed or huge tangles, breakages, impossible to sort out during cell division
+knitting bag analogy - loose tangled wool vs organised balls
+
+eukaryotic packaging
+DNA wraps around histone proteins
+histone core has 8 protein components. DON'T need all their names
+DNA + histone core = nucleosome, beads on a string
+cryo EM image showed DNA wrapped round beads
+still long but more organised
+histones can move along DNA, changing which bits exposed / accessible for transcription into mRNA
+access matters for gene expression
+
+then nucleosomes packed further - 30nm fibre in slide model
+another histone links nucleosomes
+lecturer describes this as usual less condensed form, accessible for genes
+then loops into 300nm fibre, more coiling into condensed chromosome
+condensed chromosomes allow alignment + separation without tangling during cell division
+less condensed when accessing/expressing genes
+need look at animation afterwards to picture all the coiling
+
+bacteria different - circular DNA supercoiled into loops
+more open organisation compared with eukaryotes
+proteins still needed for packaging
+will matter when discussing expression later
+
+RNA now
+basic nucleotide difference from DNA = U instead of T, ribose instead of deoxyribose
+ribose has OH at 2' carbon, DNA has H there
+small structural differences but very different roles
+
+3 main RNA types in bacteria AND eukaryotes
+mRNA messenger, transcribed from DNA, carries instructions for protein
+sequence corresponds to DNA coding strand except U for T
+central dogma DNA to RNA to protein, RNA here usually means mRNA
+rRNA ribosomal - part of ribosomes which make proteins
+tRNA transfer - brings amino acids during protein synthesis
+also microRNAs in eukaryotes for gene regulation. others too but these 3 main types to know
+
+RNA usually single stranded BUT can pair with itself
+regions in same strand complementary, fold back and base pair
+stems + loops, local double stranded regions in one molecule
+A pairs U in RNA
+secondary structure can be complicated and affects function / regulation of translation
+
+tRNA example - folded characteristic shape, brings amino acids to protein synthesis machinery
+pairing within single strand makes shape. structure linked to function
+16S rRNA from E coli - loads of stems and loops, very complex
+not expected to memorise these diagrams!
+RNA can fold into complex 3D structures, not just a floppy strand
+
+RNA world hypothesis
+possible life started with RNA, then proteins + DNA evolved later
+simple chemicals first, RNA next, DNA/protein later
+hypothesis, not proven history
+would need RNA to carry information AND support replication
+
+information bit plausible - similar sequence-based information to DNA, RNA viruses exist now
+catalysis bit - ribozymes = RNA molecules catalysing reactions
+large subunit rRNA catalyses steps in protein synthesis
+other ribozymes involved in RNA processing / splicing
+so RNA can do more than just carry a message
+artificial RNA systems that replicate have been made in lab. paper linked on slides
+proof of principle, doesn't prove this is how life actually started
+don't need memorise structure of artificial RNA
+
+why evolve DNA if RNA already worked?
+stability!! RNA much less stable
+2' OH can attack phosphate in backbone, break phosphodiester linkage / split chain
+DNA has H instead, less susceptible
+DNA double helix also protects bases inside
+DNA better long term store across generations
+ancient DNA can survive in bones / frozen material
+Richard III bones in car park example, used DNA to help identify
+RNA much harder to keep intact in lab. more stable inside cells but still relatively unstable
+
+second reason - information damage
+C can spontaneously deaminate -> U (loses amino group)
+in DNA, U shouldn't be there so can recognise as damage
+uracil DNA glycosylase removes U, repair system restores correct base
+in RNA U is normal! can't easily tell genuine U from one produced by damaged C
+information could deteriorate over time
+using T in DNA helps identify this type of damage
+
+RNA instability can actually be useful for modern gene expression - messages don't have to last forever
+but bad choice for permanent inherited information store
+RNA world possible, lots to think about re origins of life
+
+next session Monday 2 hours - DNA replication in vivo then how used in biotechnology
+main things to revise: evidence for helix + who did what, base pairing incl methyl C, dimensions, antiparallel strands, nucleosomes/packaging, RNA folding and why DNA better for storage

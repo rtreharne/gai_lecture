@@ -1,0 +1,697 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Right. We're going to start for real now. Well done.
+
+Um, you don't know how scary you are looking back until you stood at the front, so well done for that.
+
+Um, hopefully you've got the attendance code, but I will put that up again later.
+
+Yes, I've started recording right last time.
+
+Apart from some IT issues, which we hope is going to go smoothly today.
+
+Um, we looked at evidence that DNA is the genetic material.
+
+Um, and three sets of pretty clever experiments.
+
+Um, back at the start of the 1900s that proved that, um, we also looked at the structure of DNA and RNA.
+
+At a basic level, we looked at nucleotides and how they linked together into strings to form oligo and poly nucleotides.
+
+So long strings. Um, and that's kind of primary structure of DNA.
+
+What I'm going to do with you today is look at secondary and tertiary structure of nucleic acids.
+
+So I'm going to start with DNA. Um we're going to think about how the the secondary structure, the helical structure of DNA was determined,
+
+which is something that many of you might be familiar with, at least at a certain level.
+
+Um, then I'm going to talk later about how that DNA is actually packaged into cells.
+
+Um, you'll see how much DNA there is lengthwise to get into a very small cell.
+
+Packaging within the cell is really important. Then finally, I'm going to talk a bit about RNA.
+
+Um, structures of RNA. Um, and a little bit about the RNA world hypothesis.
+
+Um, one possible way that life got started on Earth.
+
+Um, going into this. So thinking about DNA, I asked you I was going to say in the lecture, but of course, that didn't quite work.
+
+I sent you a link to a Kahoot question asking you who you thought performed the
+
+experiments that led to the discovery of the double helical structure of DNA.
+
+Um, being a little bit nervous of Kahoot! I downloaded this half an hour ago, so if you've added to this in the past half hour, you won't be in here.
+
+Um, but we can have a look. It was similar to this last night, just with less input.
+
+So I'm really pleased that the majority of the people who answered this were aware of the work that Rosalind Franklin did,
+
+which we'll talk about in a moment, rather than it just being Watson and Crick.
+
+So Watson and Crick was a fair answer, but as you'll see, they actually built on the work of other people who actually did the experiments.
+
+I am incredibly pleased that at least a few people have mentioned Gosling.
+
+We'll come to that. But he is often forgotten about. And he was working with Rosalind Franklin.
+
+Um. Stahl. So the medicine Stahl experiments will come to later.
+
+They weren't actually about looking at the helical structure.
+
+That's about replication. Um, so although it's wrong, not a bad guess.
+
+Hershey and Chase, obviously, we talked about yesterday. That's not about the structure.
+
+That's about knowing that DNA is the heredity material.
+
+Um, so well done on that. The one person, no, that you've all forgotten about or didn't know about, perhaps poor old Maurice Wilkins.
+
+He always gets forgotten about. He actually got Nobel Prize along with Watson and Crick for this.
+
+Did you know that? I'm guessing not since his name didn't appear. Um.
+
+So Wilkins, Franklin and Gosling were all working together on X-ray crystallography of DNA.
+
+Gosling was the PhD student, so he very often does get forgotten about.
+
+So I'm really pleased that some of you knew that, because more than likely, he actually did quite a lot of the work.
+
+Um, what they were doing, as I say, was X-ray crystallography.
+
+What they did was to create a DNA fibre with all of the DNA strands aligned.
+
+Um, so that's important because you can imagine if you just had a blob of DNA with the strands all going in different directions.
+
+You're not going to get a clear diffraction pattern.
+
+What they did was to fire an X-ray source at it, and then the X-rays get diffracted in a really specific pattern depending on what's in the crystal.
+
+And what they got was this really famous X-ray diffraction pattern. I'm guessing a lot of you have seen that picture 51.
+
+Um, so this was the work of all of these. Excuse me.
+
+And what they could determine from this diffraction pattern.
+
+Don't worry about half at the moment. Um, what they could determine was that DNA had a helical structure.
+
+They could also determine that it had repeats at 0.34 and 3.4 nanometres.
+
+And we'll come onto what that means in terms of the DNA structure.
+
+I'll show you some images in a bit. It was two nanometres wide.
+
+And importantly, it showed that the phosphate part of the DNA was on the outside and that there was two strands of DNA.
+
+And that was important because there was a previous model of the structure of DNA,
+
+which from Linus Pauling lab, which had three strands in it, and the phosphates were on the inside.
+
+So this X-ray diffraction picture proved that that could not be the structure, and we needed something else.
+
+So that work was done just going back by these three.
+
+And as I say, Maurice Wilkins actually got the Nobel Prize alongside Crick and Watson for it.
+
+And the only reason that Franklin didn't get a Nobel Prize as well is that because she was dead by this stage, unfortunately.
+
+Um, if the audio works, I'll leave it to James Watson to explain to you what would likely have happened if that wasn't the case.
+
+If the audio doesn't work, I'll tell you. That's not it, though.
+
+There was another really important set of experiments which helped Crick and Watson to come up with their structure.
+
+Cha gaffs. Rules. Has anybody heard of this before? Yes.
+
+Some of you have. You will have heard of the principles of this or kind of what it proved, even if you've not actually heard of the experiments.
+
+Because what Edwin showed was that there was an equal amount of adenine and thymine in any DNA sample, and an equal amount of cytosine and guanine.
+
+And that led to the suggestion that these bases pair with each other.
+
+He analysed DNA from a variety of sources.
+
+You can see some of them here from eukaryotes, from mammals to microbes, things like E.coli.
+
+And as I say, what he what his show that was in all cases adenine was equivalent to thymine within
+
+the realms of a little bit of biological variability in these samples obviously,
+
+as you can see here. And that the G's also equalled the C's.
+
+The other thing to mention here though is missile cytosine. You need to be aware of this.
+
+So Myself. Cytosine is just cytosine with a methyl group on it, as you might imagine.
+
+And it's really important in eukaryotes as an epigenetic marker.
+
+And what I mean by that epigenetic, it's just something that sticks onto the DNA.
+
+Basically what it does is it represses expression of the gene.
+
+So it means that the gene that would normally be active if it has missile cytosine, if it's methylated, becomes inactive.
+
+We'll talk about the implications for that in gene expression later.
+
+For now all you need to know is in eukaryotes some cytosine is methylated.
+
+And Viagra actually looked at that separately. So although in in prokaryotes percentage of G equals the percentage of c.
+
+In eukaryotes the percentage of G equals the percentage of c plus c.
+
+Because obviously it's all the same thing. It's all cytosine. It's just some of it is methylated.
+
+So hopefully that makes sense. So as you can imagine, this was really important information for Crick and Watson.
+
+When they were trying to create a model.
+
+They had to make sure what they created fitted with what the X-ray diffraction showed, but that also paired with T and C paired with G basically.
+
+Right. I'm going to tangle with Kahoot again briefly.
+
+Um, bearing in mind what I have just shown you.
+
+I will move over to Kahoot so you can actually answer it, but I'll leave that in the corner whilst I set it up.
+
+Um, if a sample, um, doesn't matter what species was shown to have these, um,
+
+percentages of these particular bases, what would the percentage of thymine be?
+
+Is the first question. Right.
+
+You'll have to join again. There we go.
+
+That picture will come up again. And I checked, you've got 30s today, not 20.
+
+Right. I guess we're nearly all in now, right?
+
+I'm going to start it now. It'll show you the picture in a minute.
+
+He said it better. There we go. Good.
+
+Vast majority of you have got that one right. Um.
+
+So there you go. Thymine pairs with adenine. Adenine?
+
+28%. You'd expect 28%. I mean. Excellent. You were listening.
+
+Just one more to make sure we'll see who's on the top of the podium after two.
+
+Right. Guanine now. You're faster.
+
+Like it? Yeah.
+
+So the answer here was indeed 22.
+
+Most of you have been listening, but some of you missed the obvious trap here.
+
+And I kind of wanted you to, because by getting it wrong, you'll learn the answer for next time.
+
+So guanine pairs with cytosine.
+
+The trap is hitting 20%. But I just told you that if you've got missile cytosine there,
+
+it's the combination of cytosine and methyl cytosine that guanine is equivalent to because it pairs with both of them.
+
+So the answer is 22. So those of you that did get that wrong, just remember that for next time, right.
+
+Hopefully we'll get a podium. Right. Lily S, Maddie and Marwa, you were very fast and you can come and get a chocolate at the end.
+
+Um, I imagine many of you got it right, but this measures how fast you are as well.
+
+Uh, so well done. And I'm just relieved that Kahoot worked.
+
+It's so much better than pole everywhere with all your little avatars and things, I like it.
+
+Right. Okay, so This is what I just told you.
+
+I put it all in the slides just in case. Kahoot did the dirty on me, but it didn't, so that's good, right?
+
+So as we said, Watson and Crick were working with that data.
+
+I am hoping that James Watson himself is going to tell you about it.
+
+Um, let's see if we can get this to work. The noise earlier did suggest the audio is going to work.
+
+Let's see. Keep your fingers crossed you can hear this.
+
+You kept up. Too long.
+
+And, uh, what I will do the. Impression.
+
+I made some other. Right. I've turned him off. And I will tell you roughly what he's showing here, but you can go and look at the video yourself.
+
+Obviously, this is quite a long time after the actual work was done,
+
+and what they actually did was get the Cavendish to make them some metal models of the basis that they could play
+
+with and try and actually create a model that worked to fit both gas rules and the data from the London lab,
+
+Wilkins, Franklin and Gosling. And I'll show you how they pair up in a minute.
+
+But what you can see here is him making the discovery that if you put these two together, there's an obvious way for them to pair up.
+
+Okay. Um, and the same again here. So this one, the first one was a and T, I think.
+
+Let me just see what he's doing here. I think this one is CNG. Yep. That's right.
+
+Because CNG have three, um three pairs.
+
+And then this is them stacking them up to create the helix using their knowledge of chemistry.
+
+He could just, you know, he Right. Pity you couldn't hear it in his words.
+
+But if you go back and actually look at that video, you can hear what he's actually saying.
+
+I have no idea why it's not playing you the audio.
+
+I'm going to have to ask the technical team before next week.
+
+It should do. So that's what they did.
+
+And this is the classic picture that you'll have seen before. This is what you've just seen.
+
+So this is how they pair. For most of you I suspect this is familiar.
+
+The G and the C hydrogen bonding. Here are three hydrogen bonds.
+
+And here between the A and the T two bonds.
+
+The fat that's three and two bonds becomes important later on because this pairing is a little bit more stable than this.
+
+So if you're trying to denature DNA, if it's got a lot of A's and T's in it, you can do it by using a lower temperature, for instance,
+
+than you could if you've got a piece of DNA that's got lots of genes and seeds in it,
+
+and that becomes important when we're talking about DNA tech and working with DNA in the lab.
+
+But that is how they pair.
+
+The only thing really to remember here is that GPS was c pairs with T, and that you've got three bonds here between C and G and two in and T.
+
+That's what you really need to remember. And this is how that data from the crystal graph actually translates into the helix.
+
+So remember we said it's two nanometres across. What they mean is this the helix is two nanometres across here.
+
+And do you remember we said that there were repeats at 0.34 and 3.4 nanometres.
+
+The distance between two base pairs here is 0.34 nanometres.
+
+And then one of the terms of the helix. A full helical turn is 3.4 nanometres and there are ten bases in that.
+
+Obviously, um, the way this works, there's a major groove, which is a larger gap and a minor groove, which is a smaller gap.
+
+Um, in and you can see here the sugar phosphate backbone with the phosphates on the outside.
+
+Importantly. So this is what they came up with based on all of that evidence.
+
+So really the whole thing was a collaborative effort.
+
+And I think the work from Wilkins, Franklin and Gosling was published in the same issue of the journal.
+
+Actually, I need to check this as the Watson and Crick paper.
+
+Um, and I'll just show you this from the paper in 1953, this glorious understatement here.
+
+We wish to suggest a structure for the salt of deoxyribose nucleic acid DNA.
+
+Big understatement here. This structure has novel features which are of considerable biological interest.
+
+Um, which has in fact, of course, turned out to be true.
+
+Um, and we'll come back to that in terms of replication,
+
+because the next thing they suggest is that this structure immediately shows you how you can replicate DNA.
+
+So we'll talk about that in the next session. But that's how the structure was, um, elucidated.
+
+Many of you might have read The Double Helix. It's obviously written by James Watson, one of the participants in this.
+
+So there's a certain amount of bias in it if you do read it, which it's worth it.
+
+Bear that in mind, but I would suggest that there's, um, a biography of Rosalind Franklin you might be interested in as well, if you haven't read it.
+
+The Dark Lady of DNA. Neither of those is required reading.
+
+But for those of you that interests are interested in kind of how things happened and a little bit about the history of science,
+
+I definitely recommend particularly The Dark Lady of DNA.
+
+It's well worth a look. Okay.
+
+We've got a helix. The way we write this, which is something that you're going to see again and again in these section sessions.
+
+This is a double strand. Um, because of the base pairing.
+
+Obviously you have complementarity. Um, which is another word that you're going to come up against.
+
+So a always pairs with T, c with G.
+
+But if you remember, the DNA strands also have directionality from the phosphate group at one end to the hydroxyl group at the other end.
+
+And what you see in the helix is that they are antiparallel. So in one strand you have the phosphate group at the five prime end here to three prime.
+
+And the other strand goes the other way. And that again becomes really important when you're looking at DNA replication.
+
+But always if you know the sequence of one strand, you can write the other one in.
+
+So you will sometimes see double stranded DNA. um, information written as just a single strand.
+
+They assume that you can put the rest in yourselves. They carry the same information.
+
+The two strands, basically. Right.
+
+DNA is almost always double stranded, either linear, which is the way it is in eukaryotes in chromosomes.
+
+So it has ends. Again, that becomes important for replication whether it's got NS or not.
+
+NS are really hard to replicate. Um, so obviously this is how it is in human.
+
+But all eukaryotes are like that. Um, and in bacteria you get a circular piece of DNA making up the genome.
+
+So the bacterial chromosomal DNA is circular, but you also get small pieces of DNA and plasmids, which is something that we've taken advantage of.
+
+Again, for biotech, they tend to have things like antibiotic resistance that can easily be transferred
+
+from one bacteria to another on those plasmids in addition to the chromosomal DNA.
+
+Some DNA viruses do have single stranded DNA, but the vast majority of the time it's double stranded.
+
+And as we said here, how much of it is there? It depends on.
+
+I was going to say who you are, but what you are. So viruses have quite a short genome.
+
+They they're pretty simple. Their main function is to replicate and continue.
+
+More viruses. Basically they tend to have about 5000 to 200,000 base pairs.
+
+So it's quite small. And it's something you can work with in the lab. Bacteria.
+
+Something like an E coli has an order of magnitude more DNA.
+
+So in the millions of base pairs. So E coli has 4.3 million base pairs in a genome.
+
+Humans in a single genome. So in a haploid genome you have 3 billion base pairs.
+
+So your diploid. So there'll be 6 billion. Um the thing I want you don't need to remember this.
+
+This is just to illustrate the point. You have two metres of DNA in a human cell that is 0.6mm wide.
+
+It's kind of hard to envisage that. But if DNA was one millimetre wide.
+
+So if it was a bit of string, for instance, instead of two nanometres, the DNA in one of your cells would stretch 1000km.
+
+Okay. Can you see any possible problems with this?
+
+There is the potential, is there? Not for a huge tangle and then you're likely to get breakages.
+
+Um, it's going to be almost impossible to replicate a cell if you've just got this huge,
+
+tangled wedge of DNA, because you're going to have to sort it out from each other.
+
+Um, I tend to think of this as a knitting bag.
+
+Um, so if you are a little bit like I am with crafts and you end up with this, you end up with tangles, breakages, confusion.
+
+That's what would happen in DNA if it wasn't for DNA packaging.
+
+If you have your knitting bag like this, you're happy wool happy knitter or happy DNA possible to replicate.
+
+And actually, I'm using this analogy because DNA is packaged kind of similar to that.
+
+Um, sort of into balls. So this is in eukaryotes, by the way, where there is a lot more DNA.
+
+It's different in prokaryotes. So I'll come to that in a moment. So in eukaryotes if this is your single helix with your two nanometre widths,
+
+the first level of organisation is that it's wrapped around protein complexes called nucleosomes into these beads.
+
+Um so these histones are actually made of eight components to each of these histones.
+
+I do not expect you to remember what these are called,
+
+but it would be good to remember that there's eight components to it, and these are called nucleosomes.
+
+Um, the DNA protein complexes. So the histones are made of protein.
+
+And if you actually look at it in real life under a cryo electron microscope, you see something like this.
+
+So this is the DNA. And these are the histones here. And you can see the long stretch of DNA wrapped around them.
+
+So this is still pretty long. Um, it's still liable to get tangled.
+
+Um, but in this kind of state, you can express genes.
+
+Um, so mRNA could be copied from the DNA so the histones actually can move along the DNA so that the, the bit in between, that's exposed can change.
+
+And it's from that bit in between where you get gene expression. But as I say, that is still quite long and liable to get tangled.
+
+Um, they, these nucleosomes are wrapped around into something called the 30 nanometre fibre.
+
+And there's another histone, um, that links the nucleosomes together to form that,
+
+um, and it's, it's at this level that the DNA exists most of the time in the cells.
+
+Um, so, I mean, it's still pretty long and elongated. It's fairly accessible for gene expression and so on.
+
+And so this is how most of your DNA is most of the time.
+
+There you go. I wrote it for you as well. However, when you actually want to replicate a cell, um, that's when the DNA condenses to form chromosomes.
+
+Um, so they can align on the separate and so on without tangling.
+
+And so it works the majority of the time.
+
+This fibre is first looped to form a 300 nanometre fibre, and then that coils around again to form the chromosome structure that you would know about.
+
+Um, and then that can, um, arrange itself for replication and separate off from one another.
+
+So it's in this condensed form during replication and in this less condensed form,
+
+when you actually want to access the genes and, you know, express them, there you go.
+
+There's a chromosome. I suspect you all know what a chromosome looks like.
+
+You may very well not have been aware of how the DNA is actually packaged to form that.
+
+I am not even going to try and show you this video. So this video just says exactly what I have done over the past few minutes.
+
+But what it also has is an animation. So you start with a single strand of DNA and it actually shows you how everything coils around.
+
+So if you're kind of someone who likes to visualise things, I'd recommend having a look at this.
+
+It may well make more sense. It's also quite pretty.
+
+That's how it works in eukaryotes, where there's chromosomes and linear pieces of DNA with ends.
+
+Bacteria, of course, are different.
+
+Um, so it's a single circular piece of DNA and the kind of way this is packaged, although on this one, who looks like it's a break here.
+
+Ignore that. Um, it's kind of super coiled into loops, um, to package the DNA into bacteria.
+
+It's compared to, in eukaryotes, a pretty open structure, which again becomes important when you think about gene expression.
+
+Um, which we'll talk about, uh, next week into next week, start of the week after.
+
+Again though, proteins are important in this packaging.
+
+So to package the DNA, you do need proteins. Okay.
+
+That's all I want to talk about DNA. I want to move on to RNA because obviously RNA is another nucleic acid, which, as we ascertained yesterday,
+
+structurally at the kind of at the basic level, when you're thinking about nucleotides, isn't that different from DNA, there's a different base.
+
+You have uracil instead of thymine.
+
+Um, and then on the sugar to make it ribose instead of deoxyribose, you have a hydroxyl group instead of just the hydrogen.
+
+That's really the only difference. Yet it functions within the cell in a very different way.
+
+Going to start with bacteria first because they're simpler the three main RNA types in bacteria.
+
+So messenger RNA is the one we're mostly going to focus on.
+
+So when you think about the central dogma of DNA to RNA to protein, messenger RNA is what we're talking about.
+
+So messenger RNA is transcribed from the DNA carries the instructions.
+
+So it's identical in sequence apart from your Estelle instead of thymine.
+
+And then that is used to produce the protein. That's the messenger RNA.
+
+And that's the same in eukaryotes and in prokaryotes. They also have ribosomal RNA.
+
+That's part of the structure which actually produces the proteins.
+
+Again same in eukaryotes and prokaryotes. And then transfer RNA also used in protein production.
+
+So that's what we've got in bacteria and eukaryotes. But we also have other RNA types in eukaryotes one of which is micro RNAs.
+
+And that's used in gene regulation Which will come on to you later as well.
+
+There are others, as you will have seen from the.
+
+The very first slide I showed you, I think yesterday, or the second slide, the one with the slightly more complicated version of the Central Dogma.
+
+Excuse me, but these are the three main ones that you need to be aware of. The messenger RNA, ribosomal RNA and transfer RNA.
+
+RNA, you probably know, is generally single stranded rather than double stranded within the single strand,
+
+though you can get regions of self complementarity.
+
+So if you have a whole region of A's and T's, for instance, not what I've shown here,
+
+but if you did that, you can imagine how they would pair with each other to form a loop.
+
+And in this case, this sequence here is complementary to this sequence here.
+
+So it can pair with itself and form loops.
+
+And this happens a lot. And it's important in forming secondary structure of RNAs, which I'll show you in a moment.
+
+Some are really, really quite complicated.
+
+And it can also be involved in various ways of regulating translation in terms of transcription and translation.
+
+Translation really. You may have come across tRNA structure before.
+
+This is fairly complicated, but some RNAs are way more complicated than this.
+
+This is transfer RNA. Um, it's what, um, brings the amino acids to the messenger RNA during protein formation.
+
+Um, this is just to illustrate, you can have regions within the RNA that pair with each other and then form this really characteristic shape,
+
+which is really important to the function of the RNA. This is a more real version of it showing you where you're getting the pairing.
+
+So you do get regions of double stranded RNA, even though it's basically a single stranded molecule.
+
+Here's another one. Clearly, I don't expect you to remember this.
+
+This is 16 S ribosomal RNA in E.coli, and you can see just how complicated this actually is.
+
+Um, two ends here. And then so many regions of stems and loops to form the really complex structure of this RNA.
+
+And actually one theory is that life began with RNA, not DNA.
+
+Okay. It's one theory. It's not proven short of making a time machine and going back.
+
+It would be quite difficult to prove what actually happened. Um, but the suggestion is that RNA came first.
+
+So you would start with really simple chemical compounds, then you would get RNA and later protein and DNA would come into the system.
+
+To be able to do that. RNA needs to be able to carry information and it needs to be able to replicate itself, even if it can't.
+
+Now, it needed to be able to do it then in terms of carrying information.
+
+I think you can probably see how that would be possible,
+
+because the RNA very similar to the DNA in terms of the information it carries, that only difference being uracil instead of thymine.
+
+And in fact, there are viruses that do use RNA that are around today.
+
+So I think we can say that that could definitely have happened. RNA could have been used as a source of information.
+
+And there are things called ribozymes around today which are RNA molecules that can catalyse chemical reactions.
+
+So I just showed you, um, ribosomal RNA.
+
+So large subunit ribosomal RNA can catalyse steps in protein synthesis.
+
+There are other, um, ribosomes that are involved in RNA processing in splicing.
+
+So that happens. So it's quite possible that this could have been what happened evolutionarily and interestingly, um,
+
+it's been possible to synthesise artificially, um, RNA molecules that can replicate themselves.
+
+I've linked the paper here if anybody's interested. Um, this is artificially, but it's kind of a proof of principle that this theory could be true.
+
+Um, this is the beastie. But again, obviously, you don't need to know the structure.
+
+Um, it's the principle of the fact that this can be done artificially.
+
+So in theory, it's possible that the RNA world hypothesis is true.
+
+Why, though, would DNA evolve from RNA? Why don't we use RNA now?
+
+Because if you started with RNA and it's working for you, why aren't you just going to keep using that?
+
+Why is evolution worked on this RNA system and why has DNA evolved from it?
+
+Couple of main reasons. RNA is really unstable.
+
+That's a big one. So and this comes down to the hydroxyl group rather than the hydrogen on this two prime carbon.
+
+What happens is that this if this is your RNA chain here,
+
+this hydroxyl group can attack the phosphate in the phosphodiester bond and hydrolyse the molecule.
+
+Split it into small component parts. Um, which is not great if it's your molecule that is carrying information.
+
+Also, of course, DNA being double stranded, the bases are protected slightly on the inside of the helix,
+
+which does make it more stable intrinsically too. So DNA is much more stable than RNA, which is quite important.
+
+Um, you can extract ancient DNA from bones, things that have been frozen in the Arctic.
+
+Um, up to a certain point. Um, you're probably aware of the Richard, the third case, the bones in the car park.
+
+They were able to extract DNA from that and work out that these were likely the bones of the Richard the Third.
+
+You absolutely can't do that with RNA. If you ever work with RNA in the lab, RNA is a bit of a [INAUDIBLE] to actually keep in one piece.
+
+I mean, I know it's not meant to be in the lab, and it is a lot stabler in cells, but it's not stable.
+
+That's the take home. I want you to remember from this slide.
+
+But there's another thing in terms of information as well.
+
+So. Cytosine has this structure.
+
+It's got an amino group here. This can spontaneously disseminate and turn itself into uracil.
+
+So deamination just means this amino group here drops off basically and turns into uracil in DNA.
+
+Because DNA doesn't have your cell, that's quite easy to repair.
+
+The cell has an enzyme called uracil glycosylated, which tracks the DNA for uracil that shouldn't be there.
+
+Chops them out and puts the cytosine back. So you can imagine in DNA that's pretty straightforward in RNA.
+
+Not so, because there's no way for the cell to know whether that is or should have been there and is the information that it's carrying,
+
+or whether it's a cytosine that's disseminated. So over time, the information carried by the module of the molecule degrades.
+
+So this is another reason why it would have been advantageous for DNA to evolve to take over that information.
+
+Carrying on in modern cells the instability of RNA can be an advantage.
+
+And we'll come onto that in terms of DNA expression.
+
+But it absolutely wouldn't have been if you want it to be your information storage molecule, which kind of perpetuates the generations.
+
+So if we start with RNA way back when, when we were just little blobby things in the primordial soup could have been.
+
+I'm going to leave it there, and I'm going to leave you to think about, um, origins of life.
+
+It kind of links back to what Greg was talking about, um, loads of information out there.
+
+If it's something that interests you.
+
+What we're going to do in the next session, which is a two hour session on Monday, is to think about replication.
+
+So we're going to first think about how that happens in vivo naturally.
+
+And then we're going to think about how we've co-opted that in terms of biotechnology.
+
+Um I would just put that back there with the attendance code.
+
+Summary of the main points. Um, double helix structure of DNA.
+
+Watson and Crick worked it out based on other people's experiments. DNA packaging in nucleosomes.
+
+RNA can adopt complex 3D structures, and DNA and RNA have different evolutionary histories.
+
+I'm going to leave it there. Um, the three of you, come and get your chocolates.
+
+Um, just give me a moment to turn off the recording.
+
